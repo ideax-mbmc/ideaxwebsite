@@ -1,0 +1,369 @@
+/* Intro Animation Styles - Completely Redesigned */
+
+/* Lock body scroll during intro */
+body.intro-active {
+    overflow: hidden;
+    height: 100vh;
+}
+
+.intro-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    z-index: 10000;
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: opacity;
+}
+
+.intro-overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Loading Phase */
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    transition: opacity 0.6s ease;
+}
+
+.loading-container.fade-out {
+    opacity: 0;
+}
+
+.loading-text {
+    font-family: 'Encode Sans Semi Condensed', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 2rem;
+    letter-spacing: 2px;
+    opacity: 0;
+    animation: fadeInText 0.8s ease-out 0.3s forwards;
+}
+
+.loading-bar-container {
+    width: 300px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.loading-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #4FC3F7, #29B6F6, #03A9F4);
+    width: 0%;
+    border-radius: 2px;
+    transition: width 0.1s ease-out;
+    box-shadow: 0 0 10px rgba(79, 195, 247, 0.5);
+}
+
+.loading-percentage {
+    font-family: 'Encode Sans Semi Condensed', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #4FC3F7;
+    margin-top: 0.5rem;
+    opacity: 0;
+    animation: fadeInText 0.8s ease-out 0.5s forwards;
+}
+
+/* Logo Phase */
+.intro-logo {
+    position: absolute;
+    opacity: 0;
+    transform: scale(0.8);
+    will-change: transform, opacity, filter;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.intro-logo .logo-image {
+    width: 200px;
+    height: 200px;
+    filter: 
+        brightness(1.2) 
+        drop-shadow(0 0 20px rgba(255, 255, 255, 0.3))
+        drop-shadow(0 0 40px rgba(79, 195, 247, 0.2));
+    transition: filter 0.3s ease;
+}
+
+.intro-logo.animate {
+    animation: logoEntrance 5s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+.intro-logo.animate .logo-image {
+    animation: logoGlow 5s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes logoEntrance {
+    0% {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+    15% {
+        opacity: 0.3;
+        transform: scale(0.85);
+    }
+    30% {
+        opacity: 0.7;
+        transform: scale(1);
+    }
+    45% {
+        opacity: 0.9;
+        transform: scale(1.08);
+    }
+    60% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+    75% {
+        opacity: 1;
+        transform: scale(1.02);
+    }
+    85% {
+        opacity: 1;
+        transform: scale(1.01);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes logoGlow {
+    0% {
+        filter: 
+            brightness(1) 
+            drop-shadow(0 0 10px rgba(255, 255, 255, 0.2));
+    }
+    15% {
+        filter: 
+            brightness(1.1) 
+            drop-shadow(0 0 15px rgba(255, 255, 255, 0.4))
+            drop-shadow(0 0 30px rgba(79, 195, 247, 0.3));
+    }
+    30% {
+        filter: 
+            brightness(1.3) 
+            drop-shadow(0 0 25px rgba(255, 255, 255, 0.7))
+            drop-shadow(0 0 50px rgba(79, 195, 247, 0.5))
+            drop-shadow(0 0 75px rgba(3, 169, 244, 0.3));
+    }
+    45% {
+        filter: 
+            brightness(1.5) 
+            drop-shadow(0 0 35px rgba(255, 255, 255, 0.9))
+            drop-shadow(0 0 70px rgba(79, 195, 247, 0.7))
+            drop-shadow(0 0 105px rgba(3, 169, 244, 0.5));
+    }
+    60% {
+        filter: 
+            brightness(1.7) 
+            drop-shadow(0 0 45px rgba(255, 255, 255, 1))
+            drop-shadow(0 0 90px rgba(79, 195, 247, 0.9))
+            drop-shadow(0 0 135px rgba(3, 169, 244, 0.7));
+    }
+    75% {
+        filter: 
+            brightness(1.8) 
+            drop-shadow(0 0 50px rgba(255, 255, 255, 1))
+            drop-shadow(0 0 100px rgba(79, 195, 247, 1))
+            drop-shadow(0 0 150px rgba(3, 169, 244, 0.8));
+    }
+    85% {
+        filter: 
+            brightness(1.6) 
+            drop-shadow(0 0 45px rgba(255, 255, 255, 0.95))
+            drop-shadow(0 0 90px rgba(79, 195, 247, 0.9))
+            drop-shadow(0 0 135px rgba(3, 169, 244, 0.7));
+    }
+    100% {
+        filter: 
+            brightness(1.4) 
+            drop-shadow(0 0 40px rgba(255, 255, 255, 0.9))
+            drop-shadow(0 0 80px rgba(79, 195, 247, 0.8));
+    }
+}
+
+/* Gate Panels - Redesigned for smooth animation */
+.gate-panel {
+    position: fixed;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    z-index: 10001;
+    opacity: 0;
+    will-change: transform, opacity;
+}
+
+.gate-panel.show {
+    opacity: 1;
+    transition: transform 1.2s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.3s ease;
+}
+
+.gate-top {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 50vh;
+    clip-path: polygon(0 0, 100% 0, 85% 100%, 15% 100%);
+    transform: translateY(-100vh);
+}
+
+.gate-bottom {
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 50vh;
+    clip-path: polygon(15% 0, 85% 0, 100% 100%, 0 100%);
+    transform: translateY(100vh);
+}
+
+.gate-left {
+    top: 0;
+    left: 0;
+    width: 50vw;
+    height: 100vh;
+    clip-path: polygon(0 0, 100% 15%, 100% 85%, 0 100%);
+    transform: translateX(-100vw);
+}
+
+.gate-right {
+    top: 0;
+    right: 0;
+    width: 50vw;
+    height: 100vh;
+    clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 85%);
+    transform: translateX(100vw);
+}
+
+/* Animation states */
+.gate-top.animate {
+    transform: translateY(0);
+}
+
+.gate-bottom.animate {
+    transform: translateY(0);
+}
+
+.gate-left.animate {
+    transform: translateX(0);
+}
+
+.gate-right.animate {
+    transform: translateX(0);
+}
+
+/* Gate opening animation */
+.gate-top.open {
+    transform: translateY(-100vh);
+}
+
+.gate-bottom.open {
+    transform: translateY(100vh);
+}
+
+.gate-left.open {
+    transform: translateX(-100vw);
+}
+
+.gate-right.open {
+    transform: translateX(100vw);
+}
+
+/* Body scroll lock during animation */
+body.intro-active {
+    overflow: hidden;
+    height: 100vh;
+}
+
+/* Main content fade in */
+.main-content {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s cubic-bezier(0.23, 1, 0.32, 1), 
+                transform 1s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.main-content.loaded {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Force show main content if animation fails */
+body:not(.intro-active) .main-content {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 768px) {
+    .intro-logo {
+        font-size: 8rem;
+    }
+    
+    .loading-text {
+        font-size: 1.4rem;
+    }
+    
+    .loading-bar-container {
+        width: 250px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .intro-logo {
+        font-size: 6rem;
+    }
+    
+    .loading-text {
+        font-size: 1.2rem;
+        letter-spacing: 1px;
+    }
+    
+    .loading-bar-container {
+        width: 200px;
+    }
+}
+
+/* Preloader optimizations */
+.intro-overlay * {
+    will-change: transform, opacity;
+}
+
+/* Smooth transitions for better performance */
+@media (prefers-reduced-motion: no-preference) {
+    .intro-overlay,
+    .loading-container,
+    .intro-logo,
+    .gate-panel,
+    .main-content {
+        backface-visibility: hidden;
+        transform-style: preserve-3d;
+    }
+}

@@ -1,0 +1,64 @@
+export const SliderData = [{
+    image:'/images/carousel/a.webp'
+},
+{
+    image:'/images/carousel/b.webp'
+},
+{
+    image:'/images/carousel/c.webp'
+},
+{
+    image:'/images/carousel/d.webp'
+},
+{
+    image:'/images/carousel/e.webp'
+},
+{
+    image:'/images/carousel/f.webp'
+}
+,{
+    image:'/images/carousel/g.webp'
+},
+{
+    image:'/images/carousel/h.webp'
+},
+{
+    image:'/images/carousel/i.webp'
+},
+{
+    image:'/images/carousel/j.webp'
+}
+,{
+    image:'/images/carousel/k.webp'
+},
+{
+    image:'/images/carousel/l.webp'
+},
+{
+    image:'/images/carousel/m.webp'
+},
+{
+    image:'/images/carousel/n.webp'
+},
+{
+    image:'/images/carousel/o.webp'
+},
+{
+    image:'/images/carousel/p.webp'
+},
+{
+    image:'/images/carousel/q.webp'
+},
+{
+    image:'/images/carousel/3.webp'
+},
+{
+    image:'/images/carousel/4.webp'
+},
+{
+    image:'/images/carousel/5.webp'
+},
+{
+    image:'/images/carousel/6.webp'
+}
+]

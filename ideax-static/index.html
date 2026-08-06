@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+    <title>MBMC IdeaX 2025 | Innovate • Build • Impact</title>
+    <meta name="description" content="Join the MBMC IdeaX a National Level Hackathon: 48 hours of innovation, coding, and collaboration to solve real-world challenges." />
+    <meta name="summary" content="Register now for the MBMC IdeaX a National Level Hackathon. Build solutions, learn from mentors, compete for national recognition." />
+    <meta name="keywords" content="hackathon,national hackathon,innovation challenge,coding competition,student hackathon,developers,event,technology" />
+    <meta name="author" content="MBMC IdeaX Organizing Committee" />
+    <meta name="robots" content="index,follow" />
+    <meta name="googlebot" content="index,follow" />
+    <meta name="theme-color" content="#041322" />
+    <meta name="msapplication-TileColor" content="#041322" />
+    
+    <!-- Cache Control -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    
+    <link rel="icon" type="image/png" size="48x48" href="images/favicon.png" />
+    <link rel="shortcut icon" href="images/favicon.png" />
+    <link rel="manifest" href="manifest.json" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="MBMC IdeaX 2025" />
+    <meta property="og:title" content="MBMC IdeaX 2025" />
+    <meta property="og:description" content="Build innovative solutions, learn from mentors, and compete with teams nationwide." />
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+Semi+Condensed:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    
+    <!-- Preload images -->
+    <link rel="preload" as="image" href="images/carousel/a.webp" />
+    <link rel="preload" as="image" href="images/carousel/b.webp" />
+    <link rel="preload" as="image" href="images/carousel/c.webp" />
+    <link rel="preload" as="image" href="images/carousel/d.webp" />
+    <link rel="preload" as="image" href="images/carousel/e.webp" />
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- AOS (Animate On Scroll) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    
+    <!-- Slick Carousel CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+    
+    <!-- Custom CSS -->
+    <link href="css/styles.css?v=2025072602" rel="stylesheet" />
+    <link href="intro-animation.css?v=2025072602" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- Intro Animation Overlay -->
+    <div id="intro-overlay" class="intro-overlay">
+        <!-- Loading Screen -->
+        <div id="loading-container" class="loading-container">
+            <div class="loading-text">Loading Experience...</div>
+            <div class="loading-bar-container">
+                <div id="loading-bar" class="loading-bar"></div>
+            </div>
+        </div>
+        
+        <!-- Logo Display -->
+        <div id="intro-logo" class="intro-logo">
+            <img src="static/media/ideax_x_only.c63eef2ea1d1418649d9fd26da700b1e.svg" alt="IdeaX Logo" class="logo-image" />
+        </div>
+        
+        <!-- X-Gate Panels -->
+        <div id="gate-left" class="gate-panel gate-left">
+            <div class="gate-content">
+                <div class="gate-text">INNO</div>
+                <div class="gate-text">VATE</div>
+            </div>
+        </div>
+        <div id="gate-right" class="gate-panel gate-right">
+            <div class="gate-content">
+                <div class="gate-text">BUILD</div>
+                <div class="gate-text">IMPACT</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notice Popup -->
+    <div id="notice-popup" class="notice-popup-overlay">
+        <div class="notice-popup-container">
+            <button id="close-notice" class="notice-close-btn">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <div class="notice-stack">
+                <!-- First Notice -->
+                <div class="notice-card notice-card-1">
+                    <div class="notice-header">
+                        <i class="fas fa-bullhorn notice-icon"></i>
+                        <h3 class="notice-title">Important Update</h3>
+                    </div>
+                    <div class="notice-content">
+                        <p><center><h3>Registration Deadline Extended Until Dashain!</h3></center><hr>
+Don't miss your chance to be part of Nepal's Premier Hackathon. Registrations are completely free and now open until Dashain.<br>
+<b>2 Rounds, 1 Epic Journey</b><br>
+The first round will kick off immediately after Dashain, before Tihar. So get your ideas ready—only those who clear the first round will make it to the main event.
+<br>
+<i>Ready to showcase your skills? Register now and get ready for the ultimate challenge!</i></p>
+                        <div class="notice-date">Posted: September 19, 2025</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content">
+    <!-- Mobile Sidebar -->
+    <div id="sidebar" class="sidebar">
+        <div class="sidebar-wrapper">
+            <div class="sidebar-menu">
+                <a href="#about" class="sidebar-link">About</a>
+                <a href="#participation" class="sidebar-link">Participation</a>
+                <a href="#tracks" class="sidebar-link">Themes</a>
+                <a href="#faq" class="sidebar-link">FAQ</a>
+                <a href="code-of-conduct.html" class="sidebar-link">Code Of Conduct</a>
+                <div class="sidebar-dropdown">
+                    <span class="sidebar-link">Recap ▾</span>
+                    <div class="sidebar-dropdown-menu">
+                        <a href="/2024Recap/index.html" target="_blank" rel="noopener noreferrer">IdeaX 2024</a>
+                        <a href="/2023Recap/index.html" target="_blank" rel="noopener noreferrer">IdeaX 2023</a>
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar-btn-wrap">
+                <a href="https://docs.google.com/forms/d/1pfQsNEHA0f8Abr9h_YHXYQ8YSaEFfGzWXBqN8hPtJ7g/" target="_blank" rel="noopener noreferrer" class="sidebar-route">
+                    Register Now
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Navigation -->
+    <nav id="navbar" class="nav">
+        <div class="nav-container">
+            <div class="nav-logo" onclick="scrollToTop()">
+                <img src="static/media/ideax_logo_white.1e5c9d577fce92b652f11a0cfab2bcf2.svg" alt="logo" class="logo-img" />
+            </div>
+            <div class="mobile-icon" onclick="toggleSidebar()">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="nav-menu">
+                <div class="nav-item">
+                    <a href="#about" class="nav-links">About</a>
+                </div>
+                <div class="nav-item">
+                    <a href="#participation" class="nav-links">Participation</a>
+                </div>
+                <div class="nav-item">
+                    <a href="#tracks" class="nav-links">Themes</a>
+                </div>
+                <div class="nav-item">
+                    <a href="#faq" class="nav-links">FAQ</a>
+                </div>
+                <div class="nav-item">
+                    <a href="code-of-conduct.html" class="nav-router-link">Code Of Conduct</a>
+                </div>
+                <div class="nav-item dropdown" onmouseover="showDropdown()" onmouseout="hideDropdown()">
+                    <span class="nav-links">Recap ▾</span>
+                    <div class="dropdown-menu">
+                        <a href="/2024Recap/index.html" target="_blank" rel="noopener noreferrer" class="dropdown-link">IdeaX 2024</a>
+                        <a href="/2023Recap/index.html" target="_blank" rel="noopener noreferrer" class="dropdown-link">IdeaX 2023</a>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-btn">
+                <a href="https://docs.google.com/forms/d/1pfQsNEHA0f8Abr9h_YHXYQ8YSaEFfGzWXBqN8hPtJ7g/" target="_blank" rel="noopener noreferrer" class="nav-btn-link">
+                    Register Now
+                </a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section id="hero" class="hero-container">
+        <div class="hero-content-wrapper">
+            <!-- Join Card -->
+            <div class="join-card-container">
+                <div class="title-row">
+                    <img src="static/media/ideax_x_only.c63eef2ea1d1418649d9fd26da700b1e.svg" alt="Logo" class="logo" />
+                    <div class="title-text">
+                        <span class="line1">MBMC</span>
+                        <span class="line2">IdeaX 2025</span>
+                    </div>
+                </div>
+                
+                <div class="button-wrapper">
+                    <a href="https://docs.google.com/forms/d/1pfQsNEHA0f8Abr9h_YHXYQ8YSaEFfGzWXBqN8hPtJ7g/" target="_blank" rel="noopener noreferrer" class="styled-button">
+                        Register Now
+                    </a>
+                    <a href="https://discord.gg/VNfatG6grc" target="_blank" rel="noopener noreferrer" class="styled-button">
+                        <i class="fab fa-discord"></i>
+                        Join Our Discord
+                    </a>
+                </div>  
+                <p class="subtext-date">31st Oct - 02 Nov</p>
+                <p class="subtext">Innovation begins with you!</p>
+            </div>
+        </div>
+        
+        <!-- Shape Divider -->
+        <div class="shape-divider">
+            <!-- Desktop grass shape -->
+            <!-- Mobile version -->
+            <svg class="mobile-shape" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" preserveAspectRatio="none">
+                <path d="M0,120 C360,60 1080,60 1440,120 L1440,120 L0,120 Z" />
+            </svg>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section id="about" class="about-container">
+        <h1 class="about-h1">About</h1>
+        <div class="about-wrapper">
+            <div class="about-card">
+                <div class="card-header">
+                    <img src="static/media/mbmc.80250a009dd33e25f239e0c532d16890.svg" alt="MBMC Logo" class="about-icon" style="transform: scale(1.5)" />
+                    <h3 class="about-title">Madan Bhandari Memorial College</h3>
+                </div>
+                <div class="card-body">
+                    <p class="about-p">Madan Bhandari Memorial College, a non-profit making community institution, was established in 2001 to impart quality education at an affordable cost. The college offers a wide range of academic courses in XI, XII, BA, BBS, BBM, BCA, BScCSIT, and Master's Degree courses in Sociology, Journalism, and English. Since its inception, the college has achieved remarkable success in terms of quality education and infrastructural development.</p>
+                </div>
+            </div>
+            
+            <div class="about-card">
+                <div class="card-header">
+                    <img src="static/media/ideax_x_only.c63eef2ea1d1418649d9fd26da700b1e.svg" alt="IdeaX Logo" class="about-icon"/>
+                    <h3 class="about-title">MBMC IdeaX</h3>
+                </div>
+                <div class="card-body">
+                    <p class="about-p">MBMC IdeaX 2024, Madan Bhandari Memorial College's flagship technology event is ready to be launched for the year 2025, revamped as MBMC IdeaX 2025. After gathering successful participation from almost all the parts of the country, covering the most unique theme of Indigenous Languages and being Nepal's first ever hackathon to focus on preserving, promoting and revitalizing Indigenous Languages and Communities, MBMC IdeaX 2025 is ready to roll back with a lot more excitement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Why Participate Section -->
+    <section id="participation" class="participate-container">
+        <div class="participate-inner-wrapper">
+            <h2 class="participate-title">Why participate in IdeaX?</h2>
+            
+            <div class="participate-row">
+                <div class="icon-wrapper">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+                <div class="divider"></div>
+                <div class="text-column">
+                    <p class="participate-text">Propose innovative ideas that transcend technological barriers and address social inequalities, positively transforming lives through equitable digital experiences.</p>
+                </div>
+            </div>
+            
+            <div class="participate-row">
+                <div class="icon-wrapper">
+                    <i class="fas fa-users"></i>
+                </div>
+                <div class="divider"></div>
+                <div class="text-column">
+                    <p class="participate-text">Collaborate with team to develop solutions for digital equity using cutting-edge technology.</p>
+                </div>
+            </div>
+            
+            <div class="participate-row">
+                <div class="icon-wrapper">
+                    <i class="fas fa-user-cog"></i>
+                </div>
+                <div class="divider"></div>
+                <div class="text-column">
+                    <p class="participate-text">Identify frameworks and best practices for Nepal, addressing its unique social, security, sustainability, cost, and technological barriers requires a multi-faceted approach, integrating various frameworks and best practices.</p>
+                </div>
+            </div>
+            
+            <div class="participate-row">
+                <div class="icon-wrapper">
+                    <i class="fas fa-money-bill"></i>
+                </div>
+                <div class="divider"></div>
+                <div class="text-column">
+                    <p class="participate-text">Winners will be recognized and rewarded with cash prizes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Themes Section -->
+    <section id="tracks">
+        <div class="tracks-container">
+            <h2 class="track-title">Themes</h2>
+            
+            <div class="tabs-wrapper">
+                <button class="tab active" data-track="0">
+                    <i class="fas fa-heartbeat"></i>
+                    <span class="tab-label">Healthcare</span>
+                </button>
+                <button class="tab" data-track="1">
+                    <i class="fas fa-coins"></i>
+                    <span class="tab-label">Fin-tech</span>
+                </button>
+                <button class="tab" data-track="2">
+                    <i class="fas fa-seedling"></i>
+                    <span class="tab-label">Agro-tech</span>
+                </button>
+                <button class="tab" data-track="3">
+                    <i class="fas fa-plane"></i>
+                    <span class="tab-label">Travel & Tourism</span>
+                </button>
+                <button class="tab" data-track="4">
+                    <i class="fas fa-palette"></i>
+                    <span class="tab-label">Culture Tech</span>
+                </button>
+                <button class="tab" data-track="5">
+                    <i class="fas fa-code-branch"></i>
+                    <span class="tab-label">Open</span>
+                </button>             
+            </div>
+            
+            <div class="content-card">
+                <div class="track-content">
+                    <div class="icon-circle">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3 class="track-content-title">Healthcare</h3>
+                    <p class="track-description">Build tech that enhances lives through smarter, faster, and more accessible healthcare solutions.</p>
+                </div>
+                <div class="reward-box">
+                    <p>WINNER GETS</p>
+                    <h1>Rs. 10,000</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- What to Expect Section -->
+    <section id="expect" class="expect-section">
+        <div class="expect-container">
+            <h2 class="expect-title">What to Expect</h2>
+            <div class="expect-grid">
+                <div class="expect-card">
+                    <div class="expect-card-inner">
+                        <div class="expect-card-front">
+                            <img src="images/expect/games.jpg" alt="Fun Mini Events" class="expect-image" />
+                            <h3>Fun Mini Events</h3>
+                        </div>
+                        <div class="expect-card-back">
+                            <p>Participate in exciting mini-games, interactive challenges, and fun activities designed to keep your energy high throughout the event.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="expect-card">
+                    <div class="expect-card-inner">
+                        <div class="expect-card-front">
+                            <img src="images/expect/workshop.jpg" alt="Workshops & Talks" class="expect-image" />
+                            <h3>Workshops & Talks</h3>
+                        </div>
+                        <div class="expect-card-back">
+                            <p>Learn from industry experts through hands-on workshops covering the latest technologies, frameworks, and development practices.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="expect-card">
+                    <div class="expect-card-inner">
+                        <div class="expect-card-front">
+                            <img src="images/expect/goodies.jpg" alt="Swags & Goodies" class="expect-image" />
+                            <h3>Swags & Goodies</h3>
+                        </div>
+                        <div class="expect-card-back">
+                            <p>Take home exclusive IdeaX merchandise, tech gadgets, stickers, and surprise goodies from our amazing sponsors.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="expect-card">
+                    <div class="expect-card-inner">
+                        <div class="expect-card-front">
+                            <img src="images/expect/music1.jpg" alt="Live Music & Entertainment" class="expect-image" />
+                            <h3>Live Music</h3>
+                        </div>
+                        <div class="expect-card-back">
+                            <p>Enjoy live music performances, cultural shows, and entertainment sessions during breaks to refresh your mind.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery-section">
+        <div class="gallery-container">
+            <h2 class="gallery-title">Gallery</h2>
+            <div class="gallery-slider">
+                <div class="gallery-slide"><img src="images/carousel/a.webp" alt="Gallery Image" /></div>
+                <div class="gallery-slide"><img src="images/carousel/b.webp" alt="Gallery Image" /></div>
+                <div class="gallery-slide"><img src="images/carousel/c.webp" alt="Gallery Image" /></div>
+                <div class="gallery-slide"><img src="images/carousel/d.webp" alt="Gallery Image" /></div>
+                <div class="gallery-slide"><img src="images/carousel/e.webp" alt="Gallery Image" /></div>
+                <div class="gallery-slide"><img src="images/carousel/f.webp" alt="Gallery Image" /></div>
+                <div class="gallery-slide"><img src="images/carousel/g.webp" alt="Gallery Image" /></div>
+                <div class="gallery-slide"><img src="images/carousel/h.webp" alt="Gallery Image" /></div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials-section">
+        <div class="testimonials-container">
+            <h2 class="testimonials-title">Testimonials</h2>
+            <div class="testimonials-slider">
+                <div class="testimonial-card">
+                    <img src="static/media/famous.7b76f39acdb871bb9474.jpg" alt="Famous Dhungana" class="testimonial-image" />
+                    <h3 class="testimonial-name">Famous Dhungana</h3>
+                    <p class="testimonial-role">Participant IdeaX 2023</p>
+                    <p class="testimonial-description">At MBM IdeaX our mission is to preserve indigenous language through innovative tools. Exhaustion met elation, our solution stood testament to sleepless nights and the indomitable human spirit. MBM IdeaX etched itself into a memory mosaic of creativity, newfound camaraderie, and friendships.</p>
+                </div>
+                <div class="testimonial-card">
+                    <img src="static/media/Shashi.48344dff81d2ebd3e966.png" alt="Shashi Baranwal" class="testimonial-image" />
+                    <h3 class="testimonial-name">Shashi Baranwal</h3>
+                    <p class="testimonial-role">Participant IdeaX 2024</p>
+                    <p class="testimonial-description">IdeaX was my second hackathon and my first win — an experience I'll always remember. The incredible support from the organizers made every moment worthwhile. Despite the heavy rainfall and the city being flooded, they ensured our safety and arranged everything we needed throughout the event. I'm truly grateful for their dedication and effort.</p>
+                </div>
+                <div class="testimonial-card">
+                    <img src="static/media/Basab.1f3cacc65570bd2f8c29.png" alt="Basab Jha" class="testimonial-image" />
+                    <h3 class="testimonial-name">Basab Jha</h3>
+                    <p class="testimonial-role">Participant IdeaX 2024</p>
+                    <p class="testimonial-description">Went to ideaX back in sept 2024. my first hackathon. didn't really know what to expect going in, but the vibe was solid. organizers actually cared, like, you could tell. they kept the energy up without making it feel forced. met cool people. built weird stuff and somehow won a track. walked out with more ideas than i walked in with. would do it again.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FAQ Section -->
+    <section id="faq" class="faq-section">
+        <h1 class="faq-h1">FAQ</h1>
+        <div class="faq-container">
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="question-row">
+                            <div class="icon"><i class="fas fa-question-circle"></i></div>
+                            <div class="question-text">What is MBMC IdeaX?</div>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <div class="answer">IdeaX is a national-level hackathon organized by MBM College, designed to bring together creative minds to solve real-world challenges through technology. It's a platform where innovation, collaboration, and execution come together over 48 high-energy hours.</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="question-row">
+                            <div class="icon"><i class="fas fa-question-circle"></i></div>
+                            <div class="question-text">Who can participate in IdeaX?</div>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <div class="answer">Anyone with a passion for innovation! Whether you're a student, professional, beginner, or experienced developer — if you're ready to build, you're welcome at IdeaX. Just make sure you have the necessary skills to bring your ideas to life.</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="question-row">
+                            <div class="icon"><i class="fas fa-question-circle"></i></div>
+                            <div class="question-text">Do I need to have a team to participate?</div>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <div class="answer">Teams are encouraged but not required. You can register individually or with a team. As the saying goes, 'Alone we can do so little, but together we can achieve greatness.' Collaborating with others often leads to stronger, more impactful solutions.</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="question-row">
+                            <div class="icon"><i class="fas fa-question-circle"></i></div>
+                            <div class="question-text">What is the registration process and deadline?</div>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <div class="answer">You can register via our official website or directly through our Devfolio page. The registration deadline is 26th August, 2025.</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="question-row">
+                            <div class="icon"><i class="fas fa-question-circle"></i></div>
+                            <div class="question-text">Are there any registration or participation fees?</div>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <div class="answer">No — IdeaX is completely free to join. We believe in open access to innovation. There are no fees for registration or participation.</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="question-row">
+                            <div class="icon"><i class="fas fa-question-circle"></i></div>
+                            <div class="question-text">What is the format and duration of the hackathon?</div>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <div class="answer">The hackathon will be conducted offline (in-person) over a period of 48 hours, starting from 31st October 2025.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Sponsors Section -->
+    <section id="sponsors" class="sponsors-section">
+        <h1 class="sponsors-main-title">Our Sponsors</h1>
+        <h2 class="sponsors-sub-title">Gold Sponsors</h2>
+        <div class="sponsors-wrapper">
+            <a href="https://devfolio.co" target="_blank" rel="noopener noreferrer">
+                <img src="static/media/Devfolio_Logo-White.b2d979bedb324c1d2a0ef57c2ecfeb07.svg" alt="DEVFOLIO LOGO" class="sponsor-logo" />
+            </a>
+        </div>
+        <h2 class="sponsors-sub-title">Season Partners</h2>
+        <div class="sponsors-wrapper">
+            <a href="https://ethindia.co" target="_blank" rel="noopener noreferrer">
+                <img src="static/media/ethindia-light.7ccd173f99c71fa630b9a2df36b91516.svg" alt="ETHINDIA LOGO" class="sponsor-logo" />
+            </a>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="footer-container">
+        <div class="footer-wrap">
+            <div class="footer-row">
+                <div class="footer-column">
+                    <img src="static/media/ideax_x_only.c63eef2ea1d1418649d9fd26da700b1e.svg" alt="IdeaX Logo" class="footer-logo" onclick="scrollToTop()" />
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>ideax@mbmc.edu.np</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+977-9741661176</span>
+                        </div>
+                    </div>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/mbmcideax" class="social-icon-link">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://www.instagram.com/mbmc_ideax/" class="social-icon-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://discord.gg/VNfatG6grc" class="social-icon-link">
+                            <i class="fab fa-discord"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/mbm-ideax/" class="social-icon-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-column event-summary">
+                    <h2>Event Summary</h2>
+                    <p>Mode: In-person</p>
+                    <p>Venue: Madan Bhandari Memorial College</p>
+                    <p>Date: 31st Oct to 02nd Nov, 2025</p>
+                </div>
+            </div>
+            <div class="website-rights">
+                All Rights Reserved © MBMC IdeaX 2025
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- AOS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <!-- Slick Carousel -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="js/scripts.js?v=2025072602"></script>
+    <script src="intro-animation.js?v=2025072602"></script>
+    </div> <!-- Close main-content -->
+</body>
+</html>

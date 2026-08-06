@@ -1,0 +1,38 @@
+$pcolor: #0973BA;
+
+body{
+    background-color: #fff;
+}
+.heading{
+    font-weight: 800;
+    color: $pcolor;
+    font-size: 3rem;
+}
+.coc-title{
+    font-size: 2.6rem;
+    font-weight: 600;
+    margin-top: 20px;
+    color: $pcolor;
+}
+.coc-paragraph{
+    font-size: 1.7rem;
+    margin-top: 20px;
+}
+
+@media (max-width: 750px) {
+    .coc-title,
+    .heading{
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 590px) {
+    .coc-title,
+    .heading{
+        font-size: 2rem;
+    }
+
+    .coc-paragraph{
+        font-size: 1.3rem;
+    }
+}
