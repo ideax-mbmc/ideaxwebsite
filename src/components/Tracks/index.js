@@ -1,90 +1,146 @@
-import React,{useState} from 'react'
+import React, { useState } from 'react';
 
 import {
   Container,
   TabsWrapper,
   Tab,
   ContentCard,
+  DetailsWrapper,
+  TrackNumberBadge,
   IconCircle,
   Title,
   Description,
+  FocusContainer,
+  FocusHeader,
+  SubtopicsList,
+  SubtopicItem,
+  SubtopicBullet,
   RewardBox,
   TrackTitle
 } from './TracksElements';
 
 import {
-  FaRobot,
-  FaGlobe,
-  FaDoorOpen,
-  FaVrCardboard
+  FaLeaf,
+  FaShieldAlt,
+  FaLandmark,
+  FaCar,
+  FaCoins
 } from 'react-icons/fa';
-import { SiHomeassistant } from "react-icons/si";
 
 const trackData = [
   {
-    label: 'AR/VR',
-    icon: <FaVrCardboard/>,
-    description: 'Build the future of reality with IdeaX. Explore augmented worlds, virtual experiences, and the next frontier of digital innovation.',
+    number: '01',
+    label: 'Climate Change',
+    title: 'Climate Change, Resilience & Sustainability',
+    icon: <FaLeaf />,
+    description: 'Develop technology solutions that strengthen disaster resilience, environmental sustainability, and resource management.',
+    subtopics: [
+      'Disaster Preparedness & Early Warning',
+      'Sustainable Resource Management'
+    ],
     reward: 'Rs. 10,000',
   },
   {
-    label: 'IOT',
-    icon: <SiHomeassistant />,
-    description: 'Dive into the interconnected world with IdeaX. Explore smart devices, data streams, and the future of ubiquitous technology.',
+    number: '02',
+    label: 'Cyber Security',
+    title: 'Cyber Security & Digital Trust',
+    icon: <FaShieldAlt />,
+    description: 'Design intelligent systems that improve cybersecurity, strengthen digital trust, and protect users against emerging cyber threats.',
+    subtopics: [
+      'Intelligent Threat Detection',
+      'Digital Fraud & Identity Protection',
+      'AI-Assisted Security Operations'
+    ],
     reward: 'Rs. 10,000',
   },
   {
-    label: 'AI/ML',
-    icon: <FaRobot />,
-    description: 'Innovate the intelligent future with IdeaX. Explore machine learning, deep neural networks, and the power of artificial intelligence.',
+    number: '03',
+    label: 'E-Governance',
+    title: 'E-Governance & Smart Public Services',
+    icon: <FaLandmark />,
+    description: 'Build digital platforms that improve government efficiency, transparency, accessibility, and citizen engagement.',
+    subtopics: [
+      'Citizen-Centric Government Services',
+      'Data-Driven Governance'
+    ],
     reward: 'Rs. 10,000',
   },
   {
-    label: 'Web App',
-    icon: <FaGlobe />,
-    description: 'Build the web of tomorrow with IdeaX. Explore frameworks, user experiences, and the future of online interaction.',
+    number: '04',
+    label: 'Smart Transport',
+    title: 'Smart Urban Transport & Road Safety',
+    icon: <FaCar />,
+    description: 'Create smart mobility solutions that improve transportation efficiency, road safety, and sustainable urban mobility.',
+    subtopics: [
+      'Intelligent Traffic & Mobility Management',
+      'Road Safety & Accident Prevention',
+      'Smart Parking & Urban Mobility Services'
+    ],
     reward: 'Rs. 10,000',
   },
   {
-    label: 'Open',
-    icon: <FaDoorOpen />,
-    description: 'Ignite collaboration with IdeaX. Explore open source, community-driven innovation, and the future of shared technology.',
+    number: '05',
+    label: 'FinTech',
+    title: 'FinTech & Digital Financial Innovation',
+    icon: <FaCoins />,
+    description: 'Develop secure, accessible, and intelligent financial technologies that promote financial inclusion and digital trust.',
+    subtopics: [
+      'Financial Inclusion & Digital Banking',
+      'Intelligent Fraud Detection & Secure Payments',
+      'Smart Personal Finance & Financial Wellness'
+    ],
     reward: 'Rs. 10,000',
   },
 ];
 
 const Tracks = () => {
-    const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(0);
 
-    const active = trackData[activeIndex];
+  const active = trackData[activeIndex];
   return (
     <Container id="tracks">
-        <TrackTitle>
-            Tracks
-        </TrackTitle>
-        <TabsWrapper>
-            {trackData.map((track, index) => (
-                <Tab key={index} active={index === activeIndex}
-                onClick={() => setActiveIndex(index)}>
-                    {track.icon}
-                    <span className='tab-label'>{track.label}</span>
-                </Tab>
-            ))}
-        </TabsWrapper>
+      <TrackTitle>
+        Tracks
+      </TrackTitle>
+      <TabsWrapper>
+        {trackData.map((track, index) => (
+          <Tab
+            key={index}
+            active={index === activeIndex}
+            onClick={() => setActiveIndex(index)}
+          >
+            {track.icon}
+            <span className='tab-label'>{track.number}. {track.label}</span>
+          </Tab>
+        ))}
+      </TabsWrapper>
 
-        <ContentCard>
-            <div style={{flex:1,maxWidth:'50%'}}>
-                <IconCircle>{active.icon}</IconCircle>
-                <Title>{active.label}</Title>
-                <Description>{active.description}</Description>
-            </div>
-            <RewardBox>
-                <p>WINNER GETS</p>
-                <h1>{active.reward}</h1>
-            </RewardBox>
-        </ContentCard>
-    </Container> 
-  )
-}
+      <ContentCard>
+        <DetailsWrapper>
+          <TrackNumberBadge>TRACK {active.number}</TrackNumberBadge>
+          <IconCircle>{active.icon}</IconCircle>
+          <Title>{active.title}</Title>
+          <Description>{active.description}</Description>
+          <FocusContainer>
+            <FocusHeader>FOCUS AREAS</FocusHeader>
+            <SubtopicsList>
+              {active.subtopics.map((subtopic, index) => (
+                <SubtopicItem key={index}>
+                  <SubtopicBullet />
+                  {subtopic}
+                </SubtopicItem>
+              ))}
+            </SubtopicsList>
+          </FocusContainer>
+        </DetailsWrapper>
+        <RewardBox>
+          <p>WINNER GETS</p>
+          <h1>{active.reward}</h1>
+        </RewardBox>
+      </ContentCard>
+    </Container>
+  );
+};
 
-export default Tracks
+export default Tracks;
+
