@@ -31,16 +31,28 @@ export const HeroBg = styled.div`
 export const HeroContentWrapper = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  max-width: 1200px;
+  justify-content: flex-end;
+  max-width: 1240px;
   width: 100%;
   z-index: 3;
   padding: 0 60px;
+  margin-top: 20px;
+
+  @media screen and (max-width: 1200px) {
+    padding: 0 40px;
+  }
+
+  @media screen and (max-width: 980px) {
+    justify-content: flex-end;
+    padding: 0 30px;
+  }
 
   @media screen and (max-width: 768px) {
     flex-direction: column;
+    justify-content: center;
     padding: 0 20px;
     text-align: center;
+    margin-top: 0;
   }
 `;
 

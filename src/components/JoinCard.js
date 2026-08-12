@@ -10,11 +10,13 @@ const JoinCardContainer = styled.div`
   background: rgba(5, 13, 38, 0.62);
 
   border: 1px solid rgba(120, 160, 255, 0.28);
-  border-radius: 24px;
+  border-radius: 22px;
 
-  padding: 2rem;
-  max-width: 400px;
-  margin: 0 auto;
+  padding: 1.75rem 1.8rem;
+  max-width: 380px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: 0;
 
   color: white;
 
@@ -43,8 +45,15 @@ const JoinCardContainer = styled.div`
     pointer-events: none;
   }
 
+  @media screen and (max-width: 768px) {
+    margin: 0 auto;
+    max-width: 380px;
+    width: 90%;
+    padding: 1.5rem 1.25rem;
+  }
+
   @media screen and (max-width: 480px) {
-    padding: 1.5rem 1rem;
+    padding: 1.25rem 1rem;
     width: 95%;
   }
 `;
