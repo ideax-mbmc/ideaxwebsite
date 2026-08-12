@@ -5,7 +5,7 @@ import{
     ShapeDivider
 }
 from './HeroElements';
-import image from '../../images/desktop_bg.svg';
+import image from '../../images/WEBSITE_BACKGROUND.png';
 import JoinCard from '../JoinCard';
 
 const HeroSection = () => {

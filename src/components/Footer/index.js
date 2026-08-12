@@ -61,7 +61,7 @@ return (
                      <h2>Event Summary</h2>
                      <p>Mode: In-person</p>
                      <p>Venue: Madan Bhandari College</p>
-                     <p>Date: 01th July, 2025</p>
+                     <p>Date: 01th July, 2026</p>
                     </EventSummary>
                 </FooterColumn>
             </FooterRow>

@@ -17,7 +17,7 @@ const DevfolioButton = () => {
   return (
     <div
       className="apply-button"
-      data-hackathon-slug="ideax-2025"  // <-- update this with our actual Devfolio slug
+      data-hackathon-slug="ideax-2026"  // <-- update this with our actual Devfolio slug
       data-button-theme="light"        // Options: 'light' or 'dark'
       style={{ height: '44px', width: '312px' }}
     ></div>

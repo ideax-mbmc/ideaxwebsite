@@ -39,7 +39,7 @@ const WhatToExpect = () => {
   return (
     <SectionContainer>
         <ContentWrapper>
-            <SectionTitle>What Can You Expect at IdeaX 2025?</SectionTitle>
+            <SectionTitle>What Can You Expect at IdeaX 2026?</SectionTitle>
             <CardsGrid>
                 {cardData.map((card, index) => (
                 <FlipCard key={index}>
