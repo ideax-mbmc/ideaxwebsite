@@ -14,7 +14,7 @@ const HeroSection = () => {
     <HeroContainer bgImage={image}>
         <HeroContentWrapper>
             {/* <TextContent>
-                <HeroH1>MBMC IdeaX <span id='2025'>2025</span></HeroH1>
+                <HeroH1>MBMC IdeaX <span id='2026'>2026</span></HeroH1>
                 <HeroP>Idea X Innovation</HeroP>
                 <CountdownWrapper>
                     <TimeBox>

@@ -121,31 +121,34 @@ const Navbar = ({ toggle }) => {
               </NavItem>
 
               <NavItem
-              onMouseEnter={() => setDropdownOpen(true)}
-              onMouseLeave={() => setDropdownOpen(false)}
-              style={{ position: 'relative' }}
+                onMouseEnter={() => setDropdownOpen(true)}
+                onMouseLeave={() => setDropdownOpen(false)}
+                style={{ position: 'relative' }}
               >
-            <NavLinks as="div">Recap ▾</NavLinks>
-            {dropdownOpen && (
-            <DropdownMenu>
-            <DropdownLink href="/2024Recap/index.html" target="_blank" rel="noopener noreferrer">
-              IdeaX 2024
-            </DropdownLink>
-            <DropdownLink href="/2023Recap/index.html" target="_blank" rel="noopener noreferrer">
-              IdeaX 2023
-            </DropdownLink>
-            </DropdownMenu>
-            )}
-            </NavItem>
+                <NavLinks as="div">Recap ▾</NavLinks>
+                {dropdownOpen && (
+                  <DropdownMenu>
+                    <DropdownLink href="/2025Recap/index.html" target="_blank" rel="noopener noreferrer">
+                      IdeaX 2025
+                    </DropdownLink>
+                    <DropdownLink href="/2024Recap/index.html" target="_blank" rel="noopener noreferrer">
+                      IdeaX 2024
+                    </DropdownLink>
+                    <DropdownLink href="/2023Recap/index.html" target="_blank" rel="noopener noreferrer">
+                      IdeaX 2023
+                    </DropdownLink>
+                  </DropdownMenu>
+                )}
+              </NavItem>
             </NavMenu>
             <NavBtn>
-            <ExternalNavBtnLink
-            href="https://docs.google.com/forms/d/1pfQsNEHA0f8Abr9h_YHXYQ8YSaEFfGzWXBqN8hPtJ7g/"
-            target="_blank"
-            rel="noopener noreferrer"
-            >
-            Register Now
-            </ExternalNavBtnLink>
+              <ExternalNavBtnLink
+                href="https://docs.google.com/forms/d/1pfQsNEHA0f8Abr9h_YHXYQ8YSaEFfGzWXBqN8hPtJ7g/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Register Now
+              </ExternalNavBtnLink>
             </NavBtn>
           </NavbarContainer>
         </Nav>
