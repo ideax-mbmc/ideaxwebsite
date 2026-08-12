@@ -26,7 +26,7 @@ const faqData = [
   },
   {
     question:"What is the registration process and deadline?",
-    answer:"You can register via our official website or directly through our Devfolio page. The registration deadline is 26th August, 2025.",
+    answer:"You can register via our official website or directly through our Devfolio page. The registration deadline is 1st September 2026.",
   },
   {
     question:"Are there any registration or participation fees?",
@@ -34,7 +34,7 @@ const faqData = [
   },
   {
     question:"What is the format and duration of the hackathon?",
-    answer:"The hackathon will be conducted offline (in-person) over a period of 48 hours, starting from 31st October 2025.",
+    answer:"The hackathon will be conducted offline (in-person) over a period of 48 hours, starting from 2nd October 2026.",
   }
 ];
 
