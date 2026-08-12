@@ -18,7 +18,7 @@ const FooterBanner = () => {
         </BannerText>
         <Button
         as="a"
-        href="https://docs.google.com/forms/d/1pfQsNEHA0f8Abr9h_YHXYQ8YSaEFfGzWXBqN8hPtJ7g/"
+        href="https://forms.gle/cBgYAroPeJeZpxa6A"
         target="_blank"
         rel="noopener noreferrer"
         primary="true"

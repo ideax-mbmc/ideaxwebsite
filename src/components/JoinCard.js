@@ -5,21 +5,49 @@ import { FaDiscord } from 'react-icons/fa';
 import logo from '../images/ideax_x_only.svg';
 
 const JoinCardContainer = styled.div`
-  background: linear-gradient(135deg, rgba(11, 15, 51, 0.5), rgba(30, 27, 75, 0.5));
-  border: 1px solid rgba(128, 90, 213, 0.4);
-  border-radius: 20px;
+  position: relative;
+
+  background: rgba(5, 13, 38, 0.62);
+
+  border: 1px solid rgba(120, 160, 255, 0.28);
+  border-radius: 24px;
+
   padding: 2rem;
   max-width: 400px;
   margin: 0 auto;
+
   color: white;
-  box-shadow: 0 0 30px rgba(128, 90, 213, 0.1);
+
+  backdrop-filter: blur(18px) saturate(125%);
+  -webkit-backdrop-filter: blur(18px) saturate(125%);
+
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.35),
+    0 0 35px rgba(45, 91, 180, 0.12),
+    inset 0 1px 1px rgba(255, 255, 255, 0.08);
+
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+      radial-gradient(
+        circle at 50% 0%,
+        rgba(93, 63, 180, 0.18),
+        transparent 45%
+      );
+
+    pointer-events: none;
+  }
 
   @media screen and (max-width: 480px) {
     padding: 1.5rem 1rem;
-    width: 95%; /* slightly more padding on tiny screens */
+    width: 95%;
   }
 `;
-
 const TitleRow = styled.div`
   display: flex;
   align-items: center;
@@ -79,28 +107,41 @@ const StyledButton = styled.a`
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  background: rgba(255, 255, 255, 0.08);
+
+  background: rgba(7, 24, 62, 0.42);
+
   padding: 0.75rem 1.5rem;
+
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  border: 1px solid rgba(130, 170, 255, 0.25);
+
   color: white;
   font-weight: 500;
   text-decoration: none;
-  backdrop-filter: blur(6px);
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
   transition: all 0.3s ease;
 
   &:hover {
-    background: rgba(255, 255, 255, 0.15);
-    transform: scale(1.05);
-    box-shadow: 0 0 12px rgba(168, 139, 250, 0.4);
+    background: rgba(30, 75, 150, 0.35);
+    border-color: rgba(140, 180, 255, 0.5);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+      0 8px 25px rgba(20, 80, 180, 0.25);
   }
 `;
 
 const Subtext = styled.p`
   margin-top: 1rem;
   font-size: 1rem;
-  color: #a78bfa;
+  color: rgba(170, 190, 255, 0.9);
   text-align: center;
+  text-shadow: 0 0 15px rgba(80, 130, 255, 0.35);
 `;
 
 const JoinCard = () => {
@@ -110,13 +151,13 @@ const JoinCard = () => {
         <Logo src={logo} alt="Logo" />
         <TitleText>
           <Line1>MBMC</Line1>
-          <Line>IdeaX 2025</Line>
+          <Line>IdeaX 2026</Line>
         </TitleText>
       </TitleRow>
 
       <ButtonWrapper>
         <StyledButton
-          href="https://docs.google.com/forms/d/1pfQsNEHA0f8Abr9h_YHXYQ8YSaEFfGzWXBqN8hPtJ7g/"
+          href="https://forms.gle/cBgYAroPeJeZpxa6A"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -124,7 +165,7 @@ const JoinCard = () => {
         </StyledButton>
 
         <StyledButton
-          href="https://discord.gg/FDzGSRty"
+          href="https://discord.gg/3RctjES2U"
           target="_blank"
           rel="noopener noreferrer"
         >

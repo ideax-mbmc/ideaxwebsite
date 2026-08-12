@@ -38,7 +38,7 @@ const About = () => {
                      <AboutTitle>MBMC IdeaX</AboutTitle>
                 </CardHeader>
                 <CardBody>
-                    <AboutP>MBMC IdeaX 2024, Madan Bhandari Memorial College’s flagship technology event is ready to be launched for the year 2025, revamped as MBMC IdeaX 2025. After gathering successful participation from almost all the parts of the country, covering the most unique theme of Indigenous Languages and being Nepal’s first ever hackathon to focus on preserving, promoting and revitalizing Indigenous Languages and Communities, MBMC IdeaX 2025 is ready to roll back with a lot more excitement.
+                    <AboutP>MBMC IdeaX 2026, Madan Bhandari Memorial College’s flagship technology event is ready to be launched for the year 2026, revamped as MBMC IdeaX 2026. After gathering successful participation from almost all the parts of the country, covering the most unique theme of Indigenous Languages and being Nepal’s first ever hackathon to focus on preserving, promoting and revitalizing Indigenous Languages and Communities, MBMC IdeaX 2026 is ready to roll back with a lot more excitement.
                     </AboutP>
                 </CardBody>
             </AboutCard>
