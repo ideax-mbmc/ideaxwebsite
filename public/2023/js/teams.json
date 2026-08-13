@@ -1,0 +1,380 @@
+[
+    {
+        "img": "../team_images/advisoryBoard/chief.png",
+        "name": "Ramesh Chandra Paudel",
+        "depart": "Advisory Board",
+        "category": "advisory-board",
+        "class": "img-style2",
+        "social": "",
+        "socialType": ""
+    },
+    {
+        "img": "../team_images/advisoryBoard/kamalneupane.png",
+        "name": "Kamal Neupane",
+        "depart": "Advisory Board",
+        "category": "advisory-board",
+        "class": "img-style2",
+        "social": "",
+        "socialType": ""
+    },
+    {
+        "img": "../team_images/advisoryBoard/taraGautam.png",
+        "name": "Dr. Tara Gautam",
+        "depart": "Advisory Board",
+        "category": "advisory-board",
+        "class": "img-style2",
+        "social": "",
+        "socialType": ""
+    },
+    {
+        "img": "../team_images/advisoryBoard/phulBabuJha.png",
+        "name": "Phul Babu Jha",
+        "depart": "Advisory Board",
+        "category": "advisory-board",
+        "class": "img-style2",
+        "social": "",
+        "socialType": ""
+    },
+    {
+        "img": "../team_images/advisoryBoard/akMishra.png",
+        "name": "Dr. Anjay Kumar Mishra",
+        "depart": "Advisory Board",
+        "category": "advisory-board",
+        "class": "img-style2",
+        "social": "",
+        "socialType": ""
+    },
+    {
+        "img": "../team_images/advisoryBoard/PrajwalShrestha.png",
+        "name": "Prajwal Man Shrestha",
+        "depart": "Advisory Board",
+        "category": "advisory-board",
+        "class": "img-style2",
+        "social": "",
+        "socialType": ""
+    },
+    {
+        "img": "../team_images/advisoryBoard/nabarajJoshi.png",
+        "name": "Nawaraj Joshi",
+        "depart": "Advisory Board",
+        "category": "advisory-board",
+        "class": "img-style2",
+        "social": "",
+        "socialType": ""
+    },
+    {
+        "img": "../team_images/hack_lead/banshaj.png",
+        "name": "Banshaj Paudel",
+        "depart": "Hackathon Lead",
+        "category": "hackathon-lead",
+        "class": "img-style1",
+        "social": "https://linkedin.com/in/banshaj",
+        "socialType": "linkedin"
+    },
+    {
+        "img": "../team_images/design/kripesh.png",
+        "name": "Kripesh Sharma",
+        "depart": "Design and Development",
+        "category": "design-&-development",
+        "class": "img-style1",
+        "social": "",
+        "socialType": ""
+    },
+    {
+        "img": "../team_images/design/rijan.png",
+        "name": "Rijan Neupane",
+        "depart": "Design and Development",
+        "category": "design-&-development",
+        "class": "img-style1",
+        "social": "https://np.linkedin.com/in/rijan-neupane-aa47461b0",
+        "socialType": "linkedin"
+    },
+    {
+        "img": "../team_images/design/sujan.png",
+        "name": "Sujan Reshmi Magar",
+        "depart": "Design and Development",
+        "category": "design-&-development",
+        "class": "img-style1",
+        "social": "https://www.linkedin.com/in/sujan-reshmi-7511101b5",
+        "socialType": "linkedin"
+    },
+    {
+        "img": "../team_images/design/manish.png",
+        "name": "Manish Pudasaini",
+        "depart": "Design and Development",
+        "category": "design-&-development",
+        "class": "img-style1",
+        "social": "https://www.linkedin.com/in/manish-pudasaini-361a841a0",
+        "socialType": "linkedin"
+    },
+    {
+        "img": "../team_images/social_media/saira.png",
+        "name": "Saira Shrestha",
+        "depart": "Social Media and Marketing",
+        "category": "social-media-&-marketing",
+        "class": "img-style1",
+        "social": "",
+        "socialType": ""
+    },
+    {
+        "img": "../team_images/social_media/roshan.png",
+        "name": "Roshan Ghimire",
+        "depart": "Social Media and Marketing",
+        "category": "social-media-&-marketing",
+        "class": "img-style1",
+        "social": "https://www.linkedin.com/in/roshan-ghimire-a248a4274",
+        "socialType": "linkedin"
+    },
+    {
+        "img": "../team_images/documentation/Prabhat.png",
+        "name": "Prabhat Basnet",
+        "depart": "Documentation",
+        "category": "documentation",
+        "class": "img-style2",
+        "social": "https://www.linkedin.com/in/prabhat-basnet-p10",
+        "socialType": "linkedin"
+    },
+    {
+        "img": "../team_images/content/Nischal.png",
+        "name": "Nischal Katwal",
+        "depart": "Content Creation",
+        "category": "content-creation",
+        "class": "img-style2",
+        "social": "https://www.linkedin.com/in/nischal-katwal-01b56825a/",
+        "socialType": "linkedin"
+    },
+    {
+        "img": "../team_images/content/Santosh.png",
+        "name": "Santosh Adhikari",
+        "depart": "Content Creation",
+        "category": "content-creation",
+        "class": "img-style2",
+        "social": "",
+        "socialType": ""
+    },
+    {
+        "img": "../team_images/content/Sonika.png",
+        "name": "Sonika Adhikari",
+        "depart": "Content Creation",
+        "category": "content-creation",
+        "class": "img-style2",
+        "social": "",
+        "socialType": ""
+    },
+    {
+        "img": "../team_images/design/sujan.png",
+        "name": "Sujan Reshmi Magar",
+        "depart": "Content Creation",
+        "category": "content-creation",
+        "class": "img-style1",
+        "social": "",
+        "socialType": ""
+    },
+    {
+        "img": "../team_images/sponsor/Prerana Sapkota.png",
+        "name": "Prerana Sapkota",
+        "depart": "Sponsorship",
+        "category": "sponsorship",
+        "class": "img-style2",
+        "social": "https://www.linkedin.com/in/prerana-sapkota-03b786205/",
+        "socialType": "linkedin"
+    },
+    {
+        "img": "../team_images/volunteer/Anushka Aryal.png",
+        "name": "Anushka Aryal",
+        "depart": "General Volunteer",
+        "category": "general-volunteer",
+        "class": "img-style2",
+        "social": "https://www.linkedin.com/in/anushka-aryal-27916722a",
+        "socialType": "linkedin"
+    },
+    {
+        "img": "../team_images/volunteer/Puja Aryal.png",
+        "name": "Puja Aryal",
+        "depart": "General Volunteer",
+        "category": "general-volunteer",
+        "class": "img-style2",
+        "social": "https://www.linkedin.com/in/puzza-aryal-355371256",
+        "socialType": "linkedin"
+    },
+    {
+        "img": "../team_images/volunteer/Prajina Basnet.png",
+        "name": "Prajina Basnet",
+        "depart": "General Volunteer",
+        "category": "general-volunteer",
+        "class": "img-style2",
+        "social": "",
+        "socialType": ""
+    },
+    {
+        "img": "../team_images/ol/Rupesh Nepal.png",
+        "name": "Rupesh Nepal",
+        "depart": "Operations & Logistics",
+        "category": "operations-and-logistics",
+        "class": "img-style2",
+        "social": "https://www.linkedin.com/in/rupesh-nepal-62693920b/",
+        "socialType": "linkedin"
+    },
+    {
+        "img": "../team_images/ol/Ankita Subedi.png",
+        "name": "Ankita Subedi",
+        "depart": "Operations & Logistics",
+        "category": "operations-and-logistics",
+        "class": "img-style2",
+        "social": "https://www.linkedin.com/in/ankita-subedi-18a162232/",
+        "socialType": "linkedin"
+    },
+    {
+        "img": "../team_images/ol/Shristi Chapagain.png",
+        "name": "Shristi Chapagain",
+        "depart": "Operations & Logistics",
+        "category": "operations-and-logistics",
+        "class": "img-style2",
+        "social": "https://www.linkedin.com/in/shristi-chapagain-77a660232/",
+        "socialType": "linkedin"
+    },
+    {
+        "img": "../team_images/ol/Swastik Karkee.png",
+        "name": "Swastik Karki",
+        "depart": "Operations & Logistics",
+        "category": "operations-and-logistics",
+        "class": "img-style2",
+        "social": "https://www.linkedin.com/in/swastik-karki-888464230/",
+        "socialType": "linkedin"
+    },
+    {
+        "img": "../team_images/ol/Vishal Shrestha.png",
+        "name": "Vishal Shrestha",
+        "depart": "Operations & Logistics",
+        "category": "operations-and-logistics",
+        "class": "img-style2",
+        "social": "http://linkedin.com/in/vishal-shrestha-b8938a264",
+        "socialType": "linkedin"
+    },
+    {
+        "img": "../team_images/finance/Rasmila.png",
+        "name": "Rashmila Sapkota",
+        "depart": "General Volunteer",
+        "category": "general-volunteer",
+        "class": "img-style2",
+        "social": "https://www.linkedin.com/in/rashmila-sapkota-a06817274",
+        "socialType": "linkedin"
+    },
+    {
+        "img": "../team_images/finance/Namrata.png",
+        "name": "Namrata Pyakurel",
+        "depart": "Finance",
+        "category": "finance",
+        "class": "img-style2",
+        "social": "https://www.linkedin.com/in/namrata-pyakurel-697951274",
+        "socialType": "linkedin"
+    },
+    {
+        "img": "../team_images/finance/Apeshya.png",
+        "name": "Apeshya Rai",
+        "depart": "Finance",
+        "category": "finance",
+        "class": "img-style2",
+        "social": "https://www.linkedin.com/in/apeshya-rai-a81957274",
+        "socialType": "linkedin"
+    },
+    {
+        "img": "../team_images/finance/Pasang.png",
+        "name": "Pasang Butti Sherpa",
+        "depart": "General Volunteer",
+        "category": "general-volunteer",
+        "class": "img-style2",
+        "social": "https://www.linkedin.com/in/pasang-sherpa-830951274",
+        "socialType": "linkedin"
+    },
+    {
+        "img": "../team_images/userimg.png",
+        "name": "Miraj Bhattarai",
+        "depart": "General Volunteer",
+        "category": "general-volunteer",
+        "class": "img-style2",
+        "social": "",
+        "socialType": ""
+    },
+    {
+        "img": "../team_images/userimg.png",
+        "name": "Nayan Raj Pokharal",
+        "depart": "General Volunteer",
+        "category": "general-volunteer",
+        "class": "img-style2",
+        "social": "",
+        "socialType": ""
+    },
+    {
+        "img": "../team_images/userimg.png",
+        "name": "Ashal Pandey",
+        "depart": "General Volunteer",
+        "category": "general-volunteer",
+        "class": "img-style2",
+        "social": "",
+        "socialType": ""
+    },
+    {
+        "img": "../team_images/userimg.png",
+        "name": "Firoj Paudel",
+        "depart": "General Volunteer",
+        "category": "general-volunteer",
+        "class": "img-style2",
+        "social": "",
+        "socialType": ""
+    },
+    {
+        "img": "../team_images/userimg.png",
+        "name": "Reeju Pandit",
+        "depart": "General Volunteer",
+        "category": "general-volunteer",
+        "class": "img-style2",
+        "social": "",
+        "socialType": ""
+    },
+    {
+        "img": "../team_images/userimg.png",
+        "name": "Nilima Mainali",
+        "depart": "General Volunteer",
+        "category": "general-volunteer",
+        "class": "img-style2",
+        "social": "",
+        "socialType": ""
+    },
+    {
+        "img": "../team_images/userimg.png",
+        "name": "Sneha Devkota",
+        "depart": "General Volunteer",
+        "category": "general-volunteer",
+        "class": "img-style2",
+        "social": "",
+        "socialType": ""
+    },
+    {
+        "img": "../team_images/userimg.png",
+        "name": "Nilima Shrestha",
+        "depart": "General Volunteer",
+        "category": "general-volunteer",
+        "class": "img-style2",
+        "social": "",
+        "socialType": ""
+    },
+    {
+        "img": "../team_images/userimg.png",
+        "name": "Bibash Bhattarai",
+        "depart": "General Volunteer",
+        "category": "general-volunteer",
+        "class": "img-style2",
+        "social": "",
+        "socialType": ""
+    },
+    {
+        "img": "../team_images/userimg.png",
+        "name": "Rukesh Paudel",
+        "depart": "General Volunteer",
+        "category": "general-volunteer",
+        "class": "img-style2",
+        "social": "",
+        "socialType": ""
+    }
+]

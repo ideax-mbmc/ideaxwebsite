@@ -96,18 +96,19 @@ const trackData = [
 const Tracks = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const active = trackData[activeIndex];
   return (
     <Container id="tracks">
       <TrackTitle>
         Tracks
       </TrackTitle>
-      <TabsWrapper>
+      <TabsWrapper role="tablist" aria-label="Hackathon Tracks">
         {trackData.map((track, index) => (
           <Tab
             key={index}
             active={index === activeIndex}
             onClick={() => setActiveIndex(index)}
+            role="tab"
+            aria-selected={index === activeIndex}
           >
             {track.icon}
             <span className='tab-label'>{track.number}. {track.label}</span>
@@ -115,29 +116,36 @@ const Tracks = () => {
         ))}
       </TabsWrapper>
 
-      <ContentCard>
-        <DetailsWrapper>
-          <TrackNumberBadge>TRACK {active.number}</TrackNumberBadge>
-          <IconCircle>{active.icon}</IconCircle>
-          <Title>{active.title}</Title>
-          <Description>{active.description}</Description>
-          <FocusContainer>
-            <FocusHeader>FOCUS AREAS</FocusHeader>
-            <SubtopicsList>
-              {active.subtopics.map((subtopic, index) => (
-                <SubtopicItem key={index}>
-                  <SubtopicBullet />
-                  {subtopic}
-                </SubtopicItem>
-              ))}
-            </SubtopicsList>
-          </FocusContainer>
-        </DetailsWrapper>
-        <RewardBox>
-          <p>WINNER GETS</p>
-          <h1>{active.reward}</h1>
-        </RewardBox>
-      </ContentCard>
+      {trackData.map((track, index) => (
+        <ContentCard
+          key={index}
+          style={{ display: index === activeIndex ? 'flex' : 'none' }}
+          role="tabpanel"
+          aria-hidden={index !== activeIndex}
+        >
+          <DetailsWrapper>
+            <TrackNumberBadge>TRACK {track.number}</TrackNumberBadge>
+            <IconCircle>{track.icon}</IconCircle>
+            <Title>{track.title}</Title>
+            <Description>{track.description}</Description>
+            <FocusContainer>
+              <FocusHeader>FOCUS AREAS</FocusHeader>
+              <SubtopicsList>
+                {track.subtopics.map((subtopic, subIndex) => (
+                  <SubtopicItem key={subIndex}>
+                    <SubtopicBullet />
+                    {subtopic}
+                  </SubtopicItem>
+                ))}
+              </SubtopicsList>
+            </FocusContainer>
+          </DetailsWrapper>
+          <RewardBox>
+            <p>WINNER GETS</p>
+            <h1>{track.reward}</h1>
+          </RewardBox>
+        </ContentCard>
+      ))}
     </Container>
   );
 };

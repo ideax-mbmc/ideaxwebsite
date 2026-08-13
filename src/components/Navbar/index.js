@@ -128,13 +128,13 @@ const Navbar = ({ toggle }) => {
                 <NavLinks as="div">Recap ▾</NavLinks>
                 {dropdownOpen && (
                   <DropdownMenu>
-                    <DropdownLink href="/2025Recap/index.html" target="_blank" rel="noopener noreferrer">
+                    <DropdownLink href="/2025/" target="_blank" rel="noopener noreferrer">
                       IdeaX 2025
                     </DropdownLink>
-                    <DropdownLink href="/2024Recap/index.html" target="_blank" rel="noopener noreferrer">
+                    <DropdownLink href="/2024/" target="_blank" rel="noopener noreferrer">
                       IdeaX 2024
                     </DropdownLink>
-                    <DropdownLink href="/2023Recap/index.html" target="_blank" rel="noopener noreferrer">
+                    <DropdownLink href="/2023/" target="_blank" rel="noopener noreferrer">
                       IdeaX 2023
                     </DropdownLink>
                   </DropdownMenu>

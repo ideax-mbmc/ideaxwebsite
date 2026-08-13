@@ -1,0 +1,148 @@
+$pcolor: #0973BA;
+
+.navmax {
+  background-color: #fff;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 88888;
+
+  nav {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    padding: 10px;
+    position: relative;
+
+    a {
+      margin-left: 10px;
+      .logo {
+        width: 100px;
+      }
+    }
+
+    .links {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      margin: 0;
+      position: absolute;
+      right: 0;
+
+      li {
+        list-style: none;
+
+        a {
+          color: #000;
+          margin: 0 10px;
+          font-size: 18px;
+          position: relative;
+        }
+
+        a:hover {
+          color: $pcolor;
+          transition: all .3s ease-in-out;
+        }
+
+        a:hover::before {
+          content: '';
+          position: absolute;
+          bottom: -5px;
+          left: 0;
+          height: 2px;
+          width: 100%;
+          background-color: $pcolor;
+          animation: underline .3s linear ;
+        }
+        @keyframes underline {
+          0%{
+            width: 0%;
+          }
+          100%{
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    .hamburger {
+      position: absolute;
+      right: 0;
+      display: none;
+
+      .line {
+        width: 30px;
+        height: 5px;
+        background-color: #000;
+        margin: 5px;
+        border-radius: 25px;
+      }
+
+      .line2 {
+        width: 20px;
+      }
+    }
+
+    .hamclick {
+      .line2 {
+        display: none;
+      }
+
+      .line1 {
+        width: 30px;
+        transform: rotate(45deg) translateY(5px);
+      }
+
+      .line3 {
+        width: 30px;
+        transform: rotate(-45deg) translatey(-7px) translateX(0px);
+      }
+    }
+  }
+
+
+  @media (max-width: 900px) {
+    nav {
+      .links {
+        position: fixed;
+        left: -100%;
+        top: 59px;
+        background-color: #000d;
+        height: 100vh;
+        width: 100%;
+        flex-direction: column;
+        transition: all .5s ease-in-out;
+        padding-left: 0;
+
+        li {
+          margin: 10px 0;
+          padding-left: 0;
+
+          a {
+            font-size: 20px;
+            margin: 0;
+            padding: 0;
+            color: #fff;
+          }
+
+          a:hover {
+            color: #fff;
+          }
+          a:hover::before{
+            background-color: #fff;
+          }
+        }
+
+      }
+
+      .mobile {
+        left: 0;
+      }
+
+      .hamburger {
+        display: block;
+        right: 30px;
+      }
+    }
+  }
+}

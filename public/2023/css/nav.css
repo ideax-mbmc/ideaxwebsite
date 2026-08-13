@@ -1,0 +1,121 @@
+.navmax {
+  background-color: #fff;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 88888;
+}
+.navmax nav {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  padding: 10px;
+  position: relative;
+}
+.navmax nav a {
+  margin-left: 10px;
+}
+.navmax nav a .logo {
+  width: 100px;
+}
+.navmax nav .links {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin: 0;
+  position: absolute;
+  right: 0;
+}
+.navmax nav .links li {
+  list-style: none;
+}
+.navmax nav .links li a {
+  color: #000;
+  margin: 0 10px;
+  font-size: 18px;
+  position: relative;
+}
+.navmax nav .links li a:hover {
+  color: #0973BA;
+  transition: all 0.3s ease-in-out;
+}
+.navmax nav .links li a:hover::before {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #0973BA;
+  animation: underline 0.3s linear;
+}
+@keyframes underline {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+.navmax nav .hamburger {
+  position: absolute;
+  right: 0;
+  display: none;
+}
+.navmax nav .hamburger .line {
+  width: 30px;
+  height: 5px;
+  background-color: #000;
+  margin: 5px;
+  border-radius: 25px;
+}
+.navmax nav .hamburger .line2 {
+  width: 20px;
+}
+.navmax nav .hamclick .line2 {
+  display: none;
+}
+.navmax nav .hamclick .line1 {
+  width: 30px;
+  transform: rotate(45deg) translateY(5px);
+}
+.navmax nav .hamclick .line3 {
+  width: 30px;
+  transform: rotate(-45deg) translatey(-7px) translateX(0px);
+}
+@media (max-width: 900px) {
+  .navmax nav .links {
+    position: fixed;
+    left: -100%;
+    top: 59px;
+    background-color: rgba(0, 0, 0, 0.8666666667);
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    transition: all 0.5s ease-in-out;
+    padding-left: 0;
+  }
+  .navmax nav .links li {
+    margin: 10px 0;
+    padding-left: 0;
+  }
+  .navmax nav .links li a {
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+  }
+  .navmax nav .links li a:hover {
+    color: #fff;
+  }
+  .navmax nav .links li a:hover::before {
+    background-color: #fff;
+  }
+  .navmax nav .mobile {
+    left: 0;
+  }
+  .navmax nav .hamburger {
+    display: block;
+    right: 30px;
+  }
+}
