@@ -60,8 +60,9 @@ return (
                     <EventSummary>
                      <h2>Event Summary</h2>
                      <p>Mode: In-person</p>
-                     <p>Venue: Madan Bhandari College</p>
+                     <p>Venue: Madan Bhandari Memorial College</p>
                      <p>Date: 2nd October, 2026</p>
+                     <p>Registration Deadline: 1st September, 2026</p>
                     </EventSummary>
                 </FooterColumn>
             </FooterRow>
