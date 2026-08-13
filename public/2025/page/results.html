@@ -1,212 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IdeaX 2025 Winners</title>
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            margin: 0;
-            padding: 20px;
-            background-color: #041322;
-            color: #333;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            overflow: hidden;
-        }
-        
-        .header {
-            background: linear-gradient(135deg, #205F8B 10%, #013F6A 100%);
-            color: white;
-            text-align: center;
-            padding: 30px 20px;
-        }
-        
-        .header h1 {
-            margin: 0;
-            font-size: 2.5rem;
-            font-weight: 600;
-            letter-spacing: -0.5px;
-        }
-        
-        .table-container {
-            padding: 0;
-            overflow-x: auto;
-        }
-        
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 14px;
-            line-height: 1.6;
-            table-layout: fixed;
-        }
-        
-        th {
-            background-color: #f8f9fa;
-            color: black;
-            font-weight: 600;
-            padding: 15px 20px;
-            text-align: left;
-            border-bottom: 2px solid #dee2e6;
-            white-space: nowrap;
-        }
-        
-        td {
-            padding: 20px;
-            border-bottom: 1px solid #e9ecef;
-            vertical-align: top;
-        }
-        
-        tr:hover {
-            background-color: #f8f9fa;
-        }
-        
-        .rank-cell {
-            font-weight: 600;
-            color: Black;
-            white-space: nowrap;
-            text-align: center;
-            min-width: 80px;
-        }
-        
-        .winner {
-            background: linear-gradient(45deg, #ffd700, #ffed4e);
-            color: #856404;
-        }
-        
-        .runner-up {
-            background: linear-gradient(45deg, #5F7D9C, #7F9AB5);
-            color: Black;
-        }
-        
-        .team-name {
-            font-weight: 600;
-            color: #000000;
-            min-width: 100px;
-        }
-        
-        .project-name {
-            font-weight: 600;
-            color: #6f42c1;
-            min-width: 80px;
-        }
-        
-        .description {
-            max-width: 600px;
-            text-align: justify;
-        }
-        
-        .description a {
-            color: #6f42c1;
-            text-decoration: none;
-            font-weight: 500;
-        }
-        
-        .description a:hover {
-            text-decoration: underline;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IdeaX 2025 Winners</title>
+<link href="../css/preset.css" rel="stylesheet">
+<link href="../css/nav.css" rel="stylesheet">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Space+Grotesk:wght@400;500&display=swap');
+  :root{--navy:#041322;--blue:#4fb0e8;--gold:#e8b64f;--line:rgba(255,255,255,.12);--muted:#8ea0b3;}
+  body{background:var(--navy);}
+  .page{max-width:820px;margin:0 auto;padding:0 24px 110px;font-family:'Space Grotesk',sans-serif;}
 
-        @media (max-width: 980px) {
-        .header h1 {
-        font-size: 2.2rem;
-        }
+  .masthead{padding:90px 0 46px;position:relative;}
+  .masthead::after{content:'';position:absolute;bottom:0;left:0;width:60px;height:3px;background:var(--gold);}
+  .masthead .eyebrow{color:var(--gold);font-size:12px;font-weight:500;letter-spacing:3px;text-transform:uppercase;}
+  .masthead h1{font-family:'Fraunces',serif;color:#fff;font-size:56px;font-weight:600;margin-top:14px;
+    letter-spacing:-1px;line-height:1.05;}
+  .masthead p{color:var(--muted);font-size:15px;margin-top:14px;max-width:480px;line-height:1.6;}
 
-        table {
-        font-size: 13px;
-        }
+  .winner-block{display:flex;gap:28px;align-items:center;padding:48px 0;margin-top:10px;position:relative;}
+  .winner-block img{width:110px;height:110px;border-radius:4px;object-fit:cover;flex-shrink:0;
+    filter:grayscale(.15) contrast(1.05);box-shadow:8px 8px 0 var(--gold);}
+  .winner-block .info{flex:1;}
+  .winner-block .label{color:var(--gold);font-family:'Fraunces',serif;font-style:italic;font-size:14px;}
+  .winner-block h2{font-family:'Fraunces',serif;color:#fff;font-size:30px;font-weight:600;margin-top:6px;}
+  .winner-block .members{color:var(--muted);font-size:13.5px;margin-top:5px;}
+  .winner-block .actions{margin-top:16px;display:flex;gap:20px;}
+  .link-btn{background:none;border:none;color:var(--muted);font-size:13px;cursor:pointer;padding:0;
+    font-family:'Space Grotesk',sans-serif;border-bottom:1px solid transparent;transition:color .15s, border-color .15s;}
+  .link-btn:hover{color:#fff;border-color:var(--muted);}
+  .link-btn.on{color:var(--gold);border-color:var(--gold);}
 
-        th, td {
-        padding: 14px 10px;
-        }
+  .divider{width:100%;height:1px;background:linear-gradient(90deg,var(--line),transparent 80%);margin:10px 0 0;}
 
-        .description {
-        max-width: 100%;
-        }
+  .toolbar{display:flex;gap:14px;align-items:center;padding:34px 0 6px;flex-wrap:wrap;}
+  .toolbar input{flex:1;min-width:180px;background:transparent;border:none;border-bottom:1px solid var(--line);
+    color:#fff;font-size:14px;padding:9px 2px;outline:none;font-family:'Space Grotesk',sans-serif;}
+  .toolbar input::placeholder{color:var(--muted);}
+  .toolbar input:focus{border-bottom-color:var(--gold);}
+  select#trackFilter{background:transparent;border:1px solid var(--line);color:var(--muted);font-size:13px;
+    padding:9px 14px;border-radius:2px;outline:none;font-family:'Space Grotesk',sans-serif;}
+  select#trackFilter option{background:var(--navy);color:#fff;}
 
-        .team-name, .project-name {
-        min-width: 80px;
-        }
+  table{width:100%;border-collapse:collapse;margin-top:10px;}
+  thead th{text-align:left;color:var(--muted);font-size:11px;font-weight:500;letter-spacing:1.5px;
+    text-transform:uppercase;padding:16px 10px;border-bottom:1px solid var(--line);}
+  tbody td{padding:20px 10px;border-bottom:1px solid var(--line);vertical-align:top;}
+  tbody tr{transition:background .2s;}
+  tbody tr:hover{background:rgba(232,182,79,.04);}
+  td.num{color:var(--gold);font-family:'Fraunces',serif;font-style:italic;font-size:15px;width:32px;}
+  td.team{color:#fff;font-weight:500;font-size:15.5px;font-family:'Fraunces',serif;}
+  td.track{color:var(--blue);font-size:13px;}
+  td.members{color:var(--muted);font-size:12.5px;line-height:1.5;}
 
-        .rank-cell {
-        width: 100px;
-        /* min-width: 40px;
-        max-width: 40px; */
-        font-size: 12px; 
-        text-align: center;
-        }
-}
-        
-       @media (max-width: 768px) {
-    .header h1 {
-        font-size: 2rem;
-    }
+  .empty{color:var(--muted);font-size:13px;padding:30px 8px;text-align:center;}
 
-    table {
-        font-size: 12px;
-    }
-
-    th, td {
-        padding: 12px 8px;
-    }
-
-    .description {
-        max-width: none;
-    }
-
-    .rank-cell.runner-up {
-        width: 40px;
-        font-size: 12px;
-        text-align: center;
-    }
-}
-    </style>
+  @media(max-width:640px){
+    .page{padding:0 18px 70px;}
+    .masthead{padding:56px 0 30px;}
+    .masthead h1{font-size:34px;}
+    .winner-block{flex-direction:column;align-items:flex-start;gap:16px;}
+    thead{display:none;}
+    tbody tr{display:block;padding:16px 0;border-bottom:1px solid var(--line);}
+    tbody td{display:block;border:none;padding:2px 0;}
+    td.team{font-size:16px;}
+    td.members{margin-top:4px;}
+  }
+</style>
 </head>
-<body>
-    <div class="container">
-        <div class="header">
-            <h1>IdeaX 2025 Winners</h1>
-        </div>
+<body style="background:var(--navy);">
+<div class="site-wrapper">
+  <div class="max-bg navmax">
+    <nav class="mxwidth">
+      <a href="/"><img alt="logo" class="logo" src="../images/ideax_logo_white.svg"/></a>
+      <ul class="links"><li class="nl6"></li></ul>
+    </nav>
+  </div>
 
-        <!--
-          TODO(2025 results): Winners were not provided at build time.
-          Replace this placeholder with <tbody> rows following the exact same
-          pattern as 2024Recap/page/results.html once judging is complete:
-            <tr>
-                <td class="rank-cell winner">Grand Winner</td>
-                <td class="team-name">TEAM NAME</td>
-                <td class="project-name">PROJECT NAME</td>
-                <td class="description">...</td>
-            </tr>
-          Use class="rank-cell winner" for the Grand Winner row and
-          class="rank-cell runner-up" for each "Track Winner (TRACK)" row.
-        -->
-        <div class="table-container">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Rank</th>
-                        <th>Team Name</th>
-                        <th>Project</th>
-                        <th>Project Description</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td colspan="4" style="text-align:center; padding:40px 20px; color:#707070;">
-                            Soon to be added
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+  <div class="page">
+    <div class="masthead">
+      <div class="eyebrow">MBMC IdeaX — Results</div>
+      <h1>2025 Winners</h1>
+      <p>Seven teams recognized across six tracks, judged over three days of building.</p>
     </div>
+
+    <div class="winner-block">
+      <img src="../images/winner.jpeg" alt="Runtime Terrors">
+      <div class="info">
+        <div class="label">Grand Winner</div>
+        <h2>Runtime Terrors</h2>
+        <div class="members">Sujata Ghimire, Mukesh Aryal</div>
+        <div class="actions">
+          <button class="link-btn" id="likeBtn">Congratulate — <span id="likeCount">4</span></button>
+          <button class="link-btn" id="shareBtn">Copy link</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="toolbar">
+      <input id="teamSearch" placeholder="Search by team or track">
+      <select id="trackFilter"><option value="">All tracks</option></select>
+    </div>
+
+    <table>
+      <thead>
+        <tr><th>#</th><th>Team</th><th>Track</th><th>Members</th></tr>
+      </thead>
+      <tbody id="resultsBody"></tbody>
+    </table>
+    <div class="empty" id="emptyState" style="display:none;">No results match your search.</div>
+  </div>
+</div>
+
+<script>
+const data = [
+  {team:'No Cactus', track:'Travel & Tourism', members:'Sanjay Pahari, Bipul Lamsal, Sabin Ranabhat, Utkrist Mani Neupane'},
+  {team:'Dev Coders', track:'AgroTech', members:'Aaditya Sapkota, Shubham Kayastha, Aashish Bam, Bhashkar Paudyal'},
+  {team:'Tech Tacticos', track:'Healthcare', members:'Diwas Parajuli, Aayush Pokhrel, Aavash Lamichhane, Abhyudit Adhikari'},
+  {team:'Digikrit', track:'Cultural Identity', members:'Prararbda Singh Mahat, Ishan Guragain, Sanjay Shrestha'},
+  {team:'Code2Convert', track:'FinTech', members:'Diya Shakya, Sulav Timalsina, Aditya Malla Thakuri, Ayush DEV'},
+  {team:'Team Enigma', track:'Open', members:'Rabin Lamichhane, Atul Tiwari, Riya Jha'},
+];
+
+const body = document.getElementById('resultsBody');
+const empty = document.getElementById('emptyState');
+
+function render(list){
+  body.innerHTML = '';
+  list.forEach((d,i)=>{
+    const tr = document.createElement('tr');
+    tr.innerHTML = `<td class="num">${i+1}</td><td class="team">${d.team}</td><td class="track">${d.track}</td><td class="members">${d.members}</td>`;
+    body.appendChild(tr);
+  });
+  empty.style.display = list.length ? 'none' : 'block';
+}
+render(data);
+
+const select = document.getElementById('trackFilter');
+[...new Set(data.map(d=>d.track))].forEach(t=>{
+  const o = document.createElement('option'); o.value = t; o.textContent = t;
+  select.appendChild(o);
+});
+
+function applyFilters(){
+  const q = document.getElementById('teamSearch').value.toLowerCase();
+  const t = select.value;
+  render(data.filter(d =>
+    (!t || d.track === t) &&
+    (d.team.toLowerCase().includes(q) || d.track.toLowerCase().includes(q) || d.members.toLowerCase().includes(q))
+  ));
+}
+document.getElementById('teamSearch').addEventListener('input', applyFilters);
+select.addEventListener('change', applyFilters);
+
+let liked = localStorage.getItem('ideax_liked') === '1';
+let likes = parseInt(localStorage.getItem('ideax_likes') || '4');
+const likeBtn = document.getElementById('likeBtn');
+function renderLike(){
+  document.getElementById('likeCount').textContent = likes;
+  likeBtn.classList.toggle('on', liked);
+  likeBtn.innerHTML = (liked ? 'Congratulated — ' : 'Congratulate — ') + `<span id="likeCount">${likes}</span>`;
+}
+renderLike();
+likeBtn.addEventListener('click', ()=>{
+  liked = !liked;
+  likes += liked ? 1 : -1;
+  localStorage.setItem('ideax_liked', liked ? '1' : '0');
+  localStorage.setItem('ideax_likes', likes);
+  renderLike();
+});
+
+document.getElementById('shareBtn').addEventListener('click', function(){
+  navigator.clipboard.writeText(window.location.href);
+  const old = this.textContent;
+  this.textContent = 'Copied';
+  setTimeout(()=> this.textContent = old, 1400);
+});
+</script>
 </body>
 </html>
