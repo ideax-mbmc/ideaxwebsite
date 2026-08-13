@@ -81,7 +81,7 @@
 
   <div class="page">
     <div class="masthead">
-      <div class="eyebrow">MBMC IdeaX — Results</div>
+      <div class="eyebrow">MBMC IdeaX - Results</div>
       <h1>2025 Winners</h1>
       <p>Seven teams recognized across six tracks, judged over three days of building.</p>
     </div>
@@ -93,7 +93,7 @@
         <h2>Runtime Terrors</h2>
         <div class="members">Sujata Ghimire, Mukesh Aryal</div>
         <div class="actions">
-          <button class="link-btn" id="likeBtn">Congratulate — <span id="likeCount">4</span></button>
+          <button class="link-btn" id="likeBtn">Congratulate : <span id="likeCount">1</span></button>
           <button class="link-btn" id="shareBtn">Copy link</button>
         </div>
       </div>
@@ -181,7 +181,7 @@ const likeBtn = document.getElementById('likeBtn');
 function renderLike(){
   document.getElementById('likeCount').textContent = likes;
   likeBtn.classList.toggle('on', liked);
-  likeBtn.innerHTML = (liked ? 'Congratulated — ' : 'Congratulate — ') + `<span id="likeCount">${likes}</span>`;
+  likeBtn.innerHTML = (liked ? 'Congratulated : ' : 'Congratulate : ') + `<span id="likeCount">${likes}</span>`;
 }
 renderLike();
 likeBtn.addEventListener('click', ()=>{
