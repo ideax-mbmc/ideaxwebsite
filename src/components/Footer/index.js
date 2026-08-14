@@ -45,13 +45,13 @@ return (
                         </ContactItem>
                         <ContactItem>
                             <ImPhoneHangUp />
-                            <span>+977-9865522222</span>
+                            <span>+977-984-2362679</span>
                         </ContactItem>
                     </ContactInfo>
                     <SocialIcons>
                         <SocialIconLink href="https://www.facebook.com/mbmcideax?rdid=lQ8Pu4CMnbXaiB7X&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1EVD3kkwqs%2F#"><FaFacebook /></SocialIconLink>
                         <SocialIconLink href="https://www.instagram.com/mbmc_ideax/"><FaInstagram /></SocialIconLink>
-                        <SocialIconLink href="https://discord.gg/FDzGSRty"><FaDiscord /></SocialIconLink>
+                        <SocialIconLink href="https://discord.com/invite/A5Sg6wzhN"><FaDiscord /></SocialIconLink>
                         <SocialIconLink href="https://www.linkedin.com/company/mbm-ideax/"><FaLinkedin /></SocialIconLink>
                     </SocialIcons>
                 </FooterColumn>

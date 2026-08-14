@@ -17,6 +17,7 @@
 }
 .navmax nav a .logo {
   width: 100px;
+  margin:auto;
 }
 .navmax nav .links {
   display: flex;

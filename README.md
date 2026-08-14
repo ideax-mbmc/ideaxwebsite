@@ -1,4 +1,4 @@
-<h1 align="center">Ideax 2025 Website</h1>
+<h1 align="center">Ideax 2026 Website</h1>
 
 <p align="center">
   <strong>A modern, responsive website</strong><br/>

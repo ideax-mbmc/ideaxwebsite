@@ -1,55 +1,78 @@
-import React from 'react'
-import { 
-    Container,
-    InnerWrapper,
-    Title,
-    Row, 
-    // IconColumn,
-    IconWrapper,
-    Divider,
-    TextColumn,
-    Text
-     } from './ParticipateElements';
-import { PiLightbulbThin,PiUserGearLight } from "react-icons/pi";
-import { BsPeople } from "react-icons/bs";
-import { TfiMoney } from "react-icons/tfi";
+import React from 'react';
 
-const data = [
+import {
+  Container,
+  InnerWrapper,
+  Title,
+  Row,
+  IconWrapper,
+  Divider,
+  TextColumn,
+  Text,
+} from './ParticipateElements';
+
+import {
+  PiLightbulbThin,
+  PiUserGearLight,
+  PiRocketLaunchThin,
+} from 'react-icons/pi';
+
+import { BsPeople } from 'react-icons/bs';
+import { TbTargetArrow } from 'react-icons/tb';
+import { FaNetworkWired } from 'react-icons/fa';
+import { GiTrophyCup } from 'react-icons/gi';
+
+const benefits = [
   {
     icon: <PiLightbulbThin />,
-    text: 'Propose innovative ideas that transcend technological barriers and address social inequalities, positively transforming lives through equitable digital experiences.'
+    text: 'Solve real-world challenges aligned with national priorities.',
   },
   {
     icon: <BsPeople />,
-    text: 'Collaborate with team to develop solutions for digital equity using cutting-edge technology.'
+    text: 'Work with experienced mentors, judges, and industry leaders.',
   },
   {
     icon: <PiUserGearLight />,
-    text: 'Identify frameworks and best practices for Nepal, addressing its unique social, security, sustainability, cost, and technological barriers requires a multi-faceted approach, integrating various frameworks and best practices.'
+    text: 'Build innovative AI-powered and technology-driven solutions.',
   },
   {
-    icon: <TfiMoney />,
-    text: 'Winners will be recognized and rewarded with cash prizes.'
-  }
+    icon: <TbTargetArrow />,
+    text: 'Compete on a nationally recognized innovation platform.',
+  },
+  {
+    icon: <FaNetworkWired />,
+    text: 'Expand professional networks with startups, academia, government, and industry.',
+  },
+  {
+    icon: <GiTrophyCup />,
+    text: 'Receive mentorship, recognition, prizes, and potential incubation opportunities.',
+  },
+  {
+    icon: <PiRocketLaunchThin />,
+    text: 'Showcase technical excellence and entrepreneurial thinking.',
+  },
 ];
 
 const WhyParticipate = () => {
   return (
     <Container id="why">
-        <InnerWrapper>
-            <Title>Why participate in IdeaX?</Title>
-            {data.map((item, index) => (
-        <Row key={index}>
-            <IconWrapper>{item.icon}</IconWrapper>
-            <Divider />
-          <TextColumn>
-            <Text>{item.text}</Text>
-          </TextColumn>
-        </Row>
-      ))}
-        </InnerWrapper>
-    </Container>
-  )
-}
+      <InnerWrapper>
+        <Title>Why participate in IdeaX?</Title>
 
-export default WhyParticipate
+        {benefits.map((item, index) => (
+          <Row key={index}>
+            <IconWrapper>{item.icon}</IconWrapper>
+
+            <Divider />
+
+            <TextColumn>
+              <Text>{item.text}</Text>
+            </TextColumn>
+          </Row>
+        ))}
+      </InnerWrapper>
+    </Container>
+  );
+};
+
+export default WhyParticipate;
