@@ -20,7 +20,7 @@
   ],
   "rewrites": [
     {
-      "source": "/(event|code|2026)",
+      "source": "/:path*",
       "destination": "/index.html"
     }
   ]
