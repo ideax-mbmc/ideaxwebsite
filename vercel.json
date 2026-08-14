@@ -18,11 +18,17 @@
       "permanent": true
     }
   ],
-  "rewrites": [
-    {
-            "source": "/(event|code|2026)",
 
-      "destination": "/index.html"
-    }
+
+  "rewrites": [
+  {
+    "source": "/(event|code|2026)",
+    "destination": "/index.html"
+  },
+  {
+    "source": "/(.*)",
+    "destination": "/index.html"
+  }
+
   ]
 }
