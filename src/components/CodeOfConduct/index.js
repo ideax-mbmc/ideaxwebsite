@@ -119,10 +119,13 @@ const CodeOfConduct = () => {
         <Section>
             <SubTitle>Need Assistance?</SubTitle>
             <Paragraph>If you have any questions, safety concerns, or issues during the event, please reach out to:</Paragraph>
-            <styledList>
-                <li>Firoj Paudel:9800000000</li>
-                <li>Nilima Mainali:9800000001</li>
-            </styledList>
+            
+            
+            <StyledList>
+    <li>Firoj Paudel:9800000000</li>
+    <li>Nilima Mainali:9800000001</li>
+</StyledList>
+                
             <br/>
             <Paragraph>We are here to help ensure IdeaX is a space for innovation and integrity.</Paragraph>
         </Section>
