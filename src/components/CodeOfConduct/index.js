@@ -122,8 +122,14 @@ const CodeOfConduct = () => {
             
             
             <StyledList>
-    <li>Firoj Paudel:9800000000</li>
-    <li>Nilima Mainali:9800000001</li>
+  <li>
+    Krishna Adhikari:{' '}
+    <a href="tel:+977-984-2362679">+977-984-2362679</a>
+  </li>
+  <li>
+    Krijal Paneru:{' '}
+    <a href="tel:+977-974-4289830">+977-974-4289830</a>
+  </li>
 </StyledList>
                 
             <br/>

@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import {MdKeyboardArrowRight,MdArrowForward} from 'react-icons/md';
-import mobileImage from '../../images/mobile_bg.svg';
+import mobileImage from '../../images/ideax_mobile.png';
+
 
 export const HeroContainer = styled.div`
   background: ${({ bgImage }) => bgImage ? `url(${bgImage}) center/cover no-repeat` : '#041322'};
