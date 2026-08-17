@@ -58,7 +58,7 @@ const Navbar = ({ toggle }) => {
         <Nav scrollNav={scrollNav}>
           <NavbarContainer>
             <NavLogo as="div" onClick={handleLogoClick} style={{ cursor: 'pointer' }}>
-              <LogoImg src={logo} alt="logo" />
+              <LogoImg src={logo} alt="MBMC IdeaX 2026 Logo" />
             </NavLogo>
             <MobileIcon onClick={toggle}>
               <FaBars />

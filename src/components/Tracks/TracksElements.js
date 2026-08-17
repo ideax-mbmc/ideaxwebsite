@@ -287,7 +287,7 @@ export const RewardBox = styled.div`
   }
 `;
 
-export const TrackTitle = styled.h1`
+export const TrackTitle = styled.h2`
   font-size: 2.5rem;
   color: white;
   text-align: center;

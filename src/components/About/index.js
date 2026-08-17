@@ -22,7 +22,7 @@ const About = () => {
             <AboutCard>
                 <CardHeader>
                         {/* <AboutH2></AboutH2> */}
-                    <AboutIcon src={Icon1} style={{ transform: 'scale(1.5)' }} />
+                    <AboutIcon src={Icon1} alt="Madan Bhandari Memorial College Logo" style={{ transform: 'scale(1.5)' }} />
                     <AboutTitle>Madan Bhandari Memorial College</AboutTitle>
                 </CardHeader>
                 <CardBody>
@@ -34,7 +34,7 @@ const About = () => {
             <AboutCard>
                 <CardHeader>
                     {/* <AboutH2></AboutH2> */}
-                    <AboutIcon src={Icon2}/>
+                    <AboutIcon src={Icon2} alt="MBMC IdeaX Icon"/>
                      <AboutTitle>MBMC IdeaX</AboutTitle>
                 </CardHeader>
                 <CardBody>

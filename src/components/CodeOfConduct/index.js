@@ -11,10 +11,34 @@ import {
 } from './CodeOfConduct.styles';
 import Footer from '../Footer';
 import Navbar from '../Navbar';
+import SEO from '../SEO';
 
 const CodeOfConduct = () => {
   return (
     <>
+      <SEO
+        title="Code of Conduct | IdeaX 2026 - MBMC Hackathon"
+        description="Review the official Code of Conduct for IdeaX 2026. Learn about our commitment to inclusivity, expected behavior, participation rules, and reporting procedures."
+        canonical="https://ideax.mbmc.edu.np/code"
+        schemaJson={{
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://ideax.mbmc.edu.np/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Code of Conduct",
+              "item": "https://ideax.mbmc.edu.np/code"
+            }
+          ]
+        }}
+      />
       <Navbar />
       <PageWrapper>
         <ContentContainer>

@@ -96,7 +96,7 @@ export const CardBack = styled.div`
   transform: rotateY(180deg);
 `;
 
-export const FAQH1 = styled.h1`
+export const FAQH1 = styled.h2`
     font-size:3rem;
     color:white;
     text-align:center;

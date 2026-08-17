@@ -37,7 +37,7 @@ return (
         <FooterWrap>
             <FooterRow style={{alignItems: 'flex-start', justifyContent: 'flex-start'}}>
                 <FooterColumn>
-                    <FooterLogo src={logo} alt="IdeaX Logo" onClick={toggleHome}/>
+                    <FooterLogo src={logo} alt="MBMC IdeaX Logo" onClick={toggleHome}/>
                     <ContactInfo>
                         <ContactItem>
                             <IoIosMail />
@@ -49,10 +49,10 @@ return (
                         </ContactItem>
                     </ContactInfo>
                     <SocialIcons>
-                        <SocialIconLink href="https://www.facebook.com/mbmcideax?rdid=lQ8Pu4CMnbXaiB7X&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1EVD3kkwqs%2F#"><FaFacebook /></SocialIconLink>
-                        <SocialIconLink href="https://www.instagram.com/mbmc_ideax/"><FaInstagram /></SocialIconLink>
-                        <SocialIconLink href="https://discord.com/invite/A5Sg6wzhN"><FaDiscord /></SocialIconLink>
-                        <SocialIconLink href="https://www.linkedin.com/company/mbm-ideax/"><FaLinkedin /></SocialIconLink>
+                        <SocialIconLink href="https://www.facebook.com/mbmcideax?rdid=lQ8Pu4CMnbXaiB7X&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1EVD3kkwqs%2F#" aria-label="IdeaX Facebook Page" target="_blank" rel="noopener noreferrer"><FaFacebook /></SocialIconLink>
+                        <SocialIconLink href="https://www.instagram.com/mbmc_ideax/" aria-label="IdeaX Instagram Profile" target="_blank" rel="noopener noreferrer"><FaInstagram /></SocialIconLink>
+                        <SocialIconLink href="https://discord.com/invite/A5Sg6wzhN" aria-label="IdeaX Discord Community" target="_blank" rel="noopener noreferrer"><FaDiscord /></SocialIconLink>
+                        <SocialIconLink href="https://www.linkedin.com/company/mbm-ideax/" aria-label="IdeaX LinkedIn Page" target="_blank" rel="noopener noreferrer"><FaLinkedin /></SocialIconLink>
                     </SocialIcons>
                 </FooterColumn>
 

@@ -2,36 +2,43 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://ideax.mbmc.edu.np/</loc>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://ideax.mbmc.edu.np/2026/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://ideax.mbmc.edu.np/2025/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ideax.mbmc.edu.np/2024/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ideax.mbmc.edu.np/2023/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://ideax.mbmc.edu.np/event</loc>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://ideax.mbmc.edu.np/code</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ideax.mbmc.edu.np/2025/page/results.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ideax.mbmc.edu.np/2025/</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ideax.mbmc.edu.np/2024/</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ideax.mbmc.edu.np/2023/</loc>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
