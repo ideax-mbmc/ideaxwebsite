@@ -5,9 +5,8 @@ import {
   QuestionRow, 
   Icon, 
   QuestionText, 
-  CardBack,
-  CardFront,
-  CardInner,
+  AnswerWrapper,
+  AnswerInner,
   Answer,
   FAQH1
 } from './FaqElements';
@@ -68,29 +67,40 @@ const FAQ = () => {
 
   return (
     <>
-    <FAQH1>FAQ</FAQH1>
-    <FAQContainer>
-      {faqData.map((item, index) => {
-        const isOpen = openIndex === index;
-        return (
-          <FAQItem key={index} onClick={() => toggle(index)} isOpen={isOpen}>
-            <CardInner isOpen={isOpen}>
-                <CardFront>
-                <QuestionRow>
+      <FAQH1 id="faq-title">FAQ</FAQH1>
+      <FAQContainer aria-labelledby="faq-title">
+        {faqData.map((item, index) => {
+          const isOpen = openIndex === index;
+          const questionId = `faq-question-${index}`;
+          const answerId = `faq-answer-${index}`;
+          return (
+            <FAQItem key={index} isOpen={isOpen}>
+              <QuestionRow
+                type="button"
+                onClick={() => toggle(index)}
+                aria-expanded={isOpen}
+                aria-controls={answerId}
+                id={questionId}
+              >
                 <Icon isOpen={isOpen}>{isOpen ? '✔️' : '❓'}</Icon>
                 <QuestionText>{item.question}</QuestionText>
-                </QuestionRow>
-                </CardFront>
-                <CardBack>
-                 <Answer>{item.answer}</Answer>
-                </CardBack>
-            </CardInner>
-          </FAQItem>
-        );
-      })}
-    </FAQContainer>
+              </QuestionRow>
+              <AnswerWrapper
+                isOpen={isOpen}
+                id={answerId}
+                role="region"
+                aria-labelledby={questionId}
+              >
+                <AnswerInner>
+                  <Answer>{item.answer}</Answer>
+                </AnswerInner>
+              </AnswerWrapper>
+            </FAQItem>
+          );
+        })}
+      </FAQContainer>
     </>
   );
 };
 
-export default FAQ;
+export default FAQ;

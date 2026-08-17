@@ -106,7 +106,7 @@ const CodeOfConduct = () => {
           <Section>
             <SubTitle>Team Guidelines</SubTitle>
             <StyledList>
-              <li>Teams must consist of 3 to 5 members. In unique cases, teams of 2 or 6 may be permitted at the committee’s discretion.</li>
+              <li>Teams must contain 2 to 4 members.</li>
               <li>Interdisciplinary teams (e.g., combining tech, business, and design expertise) are encouraged and may receive additional consideration during evaluation.</li>
               <li>Once team formation is complete, changes are not permitted without prior approval from the organizing team.</li>
             </StyledList>
