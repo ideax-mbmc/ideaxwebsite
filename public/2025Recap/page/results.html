@@ -3,162 +3,730 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>IdeaX 2025 Winners</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+<title>IdeaX 2025 Results & Winners | MBMC IdeaX Archives</title>
+<meta name="description" content="Official results and track winners of MBMC IdeaX 2025. Featuring Grand Winner Runtime Terrors and track winners across Travel & Tourism, AgroTech, Healthcare, Cultural Identity, FinTech, and Open.">
+<meta name="keywords" content="IdeaX 2025, IdeaX 2025 Results, IdeaX 2025 Winners, MBMC IdeaX 2025, Runtime Terrors, IdeaX Hackathon 2025, Madan Bhandari Memorial College">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://ideax.mbmc.edu.np/2025/page/results.html">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="MBMC IdeaX Archives">
+<meta property="og:title" content="IdeaX 2025 Results & Winners | MBMC IdeaX Archives">
+<meta property="og:description" content="Official results and track winners of MBMC IdeaX 2025. Celebrating Grand Winner Runtime Terrors and all track winners.">
+<meta property="og:url" content="https://ideax.mbmc.edu.np/2025/page/results.html">
+<meta property="og:image" content="https://ideax.mbmc.edu.np/2025/images/winner.jpeg">
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="IdeaX 2025 Results & Winners | MBMC IdeaX Archives">
+<meta name="twitter:description" content="Official results and track winners of MBMC IdeaX 2025. Celebrating Grand Winner Runtime Terrors and all track winners.">
+<meta name="twitter:image" content="https://ideax.mbmc.edu.np/2025/images/winner.jpeg">
+
 <link href="../css/preset.css" rel="stylesheet">
 <link href="../css/nav.css" rel="stylesheet">
-<link href="../css/result.css" rel="stylesheet">
 <style>
-    .results-hero {
-        width: 100%;
-        text-align: center;
-        padding: 50px 20px 20px;
-    }
-    .results-hero h1 {
-        font-size: 40px;
-        text-transform: uppercase;
-        color: #fff;
-        font-weight: 600;
-        letter-spacing: 1px;
-    }
-    .results-hero p {
-        color: #9fb3c8;
-        margin-top: 8px;
-        font-size: 16px;
-    }
-    .winner-photo-wrap {
-        display: flex;
-        justify-content: center;
-        margin: 30px 0 10px;
-    }
-    .winner-photo-wrap img {
-        max-width: 380px;
-        width: 100%;
-        border-radius: 10px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-        border: 3px solid #0973BA;
-    }
-    .table-area table {
-        width: 100%;
-        border-collapse: collapse;
-        font-size: 15px;
-    }
-    .table-area th {
-        background-color: #041322;
-        color: #fff;
-        padding: 14px 18px;
-        text-align: left;
-        font-weight: 600;
-    }
-    .table-area td {
-        padding: 16px 18px;
-        border-bottom: 1px solid #eee;
-        vertical-align: top;
-    }
-    .table-area tbody tr:hover {
-        background-color: #f4f8fb;
-    }
-    .rank-cell {
-        font-weight: 700;
-        text-align: center;
-        border-radius: 4px;
-        white-space: nowrap;
-    }
-    .winner {
-        background: linear-gradient(45deg, #ffd700, #ffed4e);
-        color: #856404;
-    }
-    .runner-up {
-        background: linear-gradient(45deg, #0973BA, #205F8B);
-        color: #fff;
-    }
-    .team-name { font-weight: 700; color: #041322; }
-    .project-name { font-weight: 600; color: #0973BA; }
-    @media (max-width: 768px) {
-        .results-hero h1 { font-size: 28px; }
-        .table-area { padding: 15px; }
-        .table-area th, .table-area td { padding: 10px; font-size: 13px; }
-    }
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+  
+  :root {
+    --navy: #041322;
+    --navy-light: #071c2f;
+    --card-bg: rgba(7, 28, 47, 0.65);
+    --blue: #6fa8c7;
+    --blue-accent: #013f6a;
+    --gold: #e8b64f;
+    --gold-glow: rgba(232, 182, 79, 0.25);
+    --line: rgba(255, 255, 255, 0.12);
+    --muted: #94a3b8;
+    --text-bright: #f8fafc;
+  }
+  
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scrollbar-gutter: stable; scroll-behavior: smooth; }
+  body { background: var(--navy); color: #fff; font-family: 'Space Grotesk', sans-serif; line-height: 1.6; min-height: 100vh; }
+  
+  .page-container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 40px 24px 100px;
+  }
+  
+  /* Masthead / Hero */
+  .masthead {
+    padding: 50px 0 40px;
+    position: relative;
+    text-align: center;
+  }
+  
+  .masthead .eyebrow {
+    display: inline-block;
+    color: var(--gold);
+    background: var(--gold-glow);
+    border: 1px solid rgba(232, 182, 79, 0.4);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  
+  .masthead h1 {
+    font-family: 'Fraunces', serif;
+    color: #ffffff;
+    font-size: clamp(2.5rem, 5vw, 3.75rem);
+    font-weight: 700;
+    letter-spacing: -1px;
+    line-height: 1.1;
+    margin-bottom: 16px;
+  }
+  
+  .masthead p {
+    color: var(--muted);
+    font-size: 1.1rem;
+    max-width: 580px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  
+  /* Grand Winner Feature Card */
+  .grand-winner-section {
+    margin: 20px 0 50px;
+  }
+
+  .winner-card {
+    display: flex;
+    gap: 36px;
+    align-items: center;
+    background: linear-gradient(135deg, rgba(7, 28, 47, 0.9) 0%, rgba(4, 19, 34, 0.95) 100%);
+    border: 1px solid var(--gold);
+    border-radius: 20px;
+    padding: 36px 40px;
+    position: relative;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 30px var(--gold-glow);
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+  }
+
+  .winner-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, var(--gold-glow) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  
+  .winner-card img {
+    width: 150px;
+    height: 150px;
+    min-width: 150px;
+    border-radius: 14px;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 3px solid var(--gold);
+    box-shadow: 0 10px 25px rgba(232, 182, 79, 0.3);
+  }
+  
+  .winner-card .info { flex: 1; z-index: 1; }
+  
+  .winner-card .label {
+    display: inline-block;
+    color: var(--gold);
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+  }
+  
+  .winner-card h2 {
+    font-family: 'Fraunces', serif;
+    color: #ffffff;
+    font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+  
+  .winner-card .members {
+    color: var(--muted);
+    font-size: 15px;
+    margin-bottom: 20px;
+  }
+
+  .winner-card .members span {
+    color: var(--text-bright);
+    font-weight: 500;
+  }
+  
+  .winner-card .actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .action-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--line);
+    color: var(--text-bright);
+    font-size: 13.5px;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-family: 'Space Grotesk', sans-serif;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .action-btn:hover {
+    background: rgba(232, 182, 79, 0.15);
+    border-color: var(--gold);
+    color: #ffffff;
+    transform: translateY(-2px);
+  }
+
+  .action-btn.on {
+    background: var(--gold-glow);
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+
+  /* Toolbar / Search & Filter */
+  .results-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .results-section-header h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 1.75rem;
+    color: #ffffff;
+  }
+
+  .toolbar {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+  }
+
+  .search-box {
+    position: relative;
+    flex: 1;
+    min-width: 260px;
+  }
+
+  .search-box input {
+    width: 100%;
+    background: rgba(7, 28, 47, 0.7);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    color: #ffffff;
+    font-size: 15px;
+    padding: 12px 16px 12px 42px;
+    outline: none;
+    font-family: 'Space Grotesk', sans-serif;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .search-box input::placeholder { color: var(--muted); }
+  
+  .search-box input:focus {
+    border-color: var(--blue);
+    box-shadow: 0 0 15px rgba(111, 168, 199, 0.2);
+  }
+
+  .search-icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--muted);
+    font-size: 16px;
+    pointer-events: none;
+  }
+
+  .filter-dropdown {
+    position: relative;
+  }
+
+  .filter-btn {
+    background: rgba(7, 28, 47, 0.7);
+    border: 1px solid var(--line);
+    color: var(--text-bright);
+    font-size: 14px;
+    padding: 12px 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-family: 'Space Grotesk', sans-serif;
+    min-width: 200px;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: border-color 0.2s ease;
+  }
+
+  .filter-btn:hover {
+    border-color: var(--blue);
+  }
+
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 6px);
+    right: 0;
+    background: #071c2f;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    min-width: 220px;
+    z-index: 100;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+  }
+
+  .dropdown-item {
+    padding: 12px 18px;
+    font-size: 14px;
+    color: var(--muted);
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+
+  .dropdown-item:hover {
+    background: rgba(111, 168, 199, 0.15);
+    color: #ffffff;
+  }
+
+  /* Table View (Desktop) */
+  .table-wrapper {
+    background: rgba(7, 28, 47, 0.45);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  thead th {
+    text-align: left;
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 18px 24px;
+    background: rgba(4, 19, 34, 0.8);
+    border-bottom: 1px solid var(--line);
+  }
+
+  tbody td {
+    padding: 22px 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    vertical-align: middle;
+  }
+
+  tbody tr { transition: background 0.2s ease; }
+  tbody tr:hover { background: rgba(111, 168, 199, 0.06); }
+
+  td.num {
+    color: var(--gold);
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: 18px;
+    width: 60px;
+  }
+
+  td.team {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 17px;
+    font-family: 'Fraunces', serif;
+  }
+
+  td.track span {
+    display: inline-block;
+    background: rgba(111, 168, 199, 0.15);
+    color: var(--blue);
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    border: 1px solid rgba(111, 168, 199, 0.25);
+  }
+
+  td.members {
+    color: #cbd5e1;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* Mobile Card View (<768px) */
+  .mobile-cards-container {
+    display: none;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .mobile-result-card {
+    background: rgba(7, 28, 47, 0.6);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .mobile-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .mobile-card-rank {
+    color: var(--gold);
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: 16px;
+  }
+
+  .mobile-card-team {
+    font-family: 'Fraunces', serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #ffffff;
+  }
+
+  .mobile-card-track {
+    align-self: flex-start;
+    background: rgba(111, 168, 199, 0.15);
+    color: var(--blue);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    border: 1px solid rgba(111, 168, 199, 0.25);
+  }
+
+  .mobile-card-members {
+    font-size: 13.5px;
+    color: #cbd5e1;
+    line-height: 1.5;
+    margin-top: 4px;
+  }
+
+  .empty {
+    color: var(--muted);
+    font-size: 15px;
+    padding: 50px 20px;
+    text-align: center;
+    background: rgba(7, 28, 47, 0.3);
+    border-radius: 16px;
+    border: 1px dashed var(--line);
+  }
+
+  .back-link-wrapper {
+    margin-top: 40px;
+    text-align: center;
+  }
+
+  .back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--blue);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 24px;
+    border: 1px solid rgba(111, 168, 199, 0.3);
+    border-radius: 12px;
+    transition: all 0.2s ease;
+  }
+
+  .back-btn:hover {
+    background: rgba(111, 168, 199, 0.15);
+    border-color: var(--blue);
+    color: #ffffff;
+  }
+
+  @media (max-width: 768px) {
+    .page-container { padding: 30px 16px 80px; }
+    .masthead { padding: 36px 0 24px; }
+    .winner-card { flex-direction: column; text-align: center; padding: 28px 20px; gap: 20px; }
+    .winner-card img { width: 130px; height: 130px; min-width: 130px; }
+    .winner-card .actions { justify-content: center; }
+    
+    .table-wrapper { display: none; }
+    .mobile-cards-container { display: flex; }
+    .toolbar { flex-direction: column; align-items: stretch; }
+    .filter-btn { width: 100%; }
+    .dropdown-menu { width: 100%; }
+  }
 </style>
+
+<!-- Schema.org JSON-LD Structured Data for Event Results -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": "MBMC IdeaX 2025",
+  "alternateName": "IdeaX 2025 Hackathon",
+  "description": "Official results and track winners of MBMC IdeaX 2025. Grand Winner: Runtime Terrors.",
+  "eventStatus": "https://schema.org/EventCompleted",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "location": {
+    "@type": "Place",
+    "name": "Madan Bhandari Memorial College",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Kathmandu",
+      "addressCountry": "NP"
+    }
+  },
+  "organizer": {
+    "@type": "CollegeOrUniversity",
+    "name": "Madan Bhandari Memorial College",
+    "url": "https://mbmc.edu.np"
+  },
+  "url": "https://ideax.mbmc.edu.np/2025/page/results.html"
+}
+</script>
 </head>
 <body>
 <div class="site-wrapper">
-<div class="max-bg navmax">
-<nav class="mxwidth">
-<a href="/"><img alt="logo" class="logo" src="../images/ideax_logo_white.svg"/></a>
-<ul class="links"><li class="nl6"></li></ul>
-</nav>
+  <div class="max-bg navmax">
+    <nav class="mxwidth">
+      <a href="/"><img alt="MBMC IdeaX Logo" class="logo" src="/2025/images/ideax_logo_white.svg"/></a>
+      <ul class="links"><li class="nl6"></li></ul>
+    </nav>
+  </div>
+
+  <div class="page-container">
+    <header class="masthead">
+      <div class="eyebrow">MBMC IdeaX - Results</div>
+      <h1>2025 Winners</h1>
+      <p>Seven teams recognized across six tracks, judged over three days of building.</p>
+    </header>
+
+    <!-- Grand Winner Section -->
+    <section class="grand-winner-section">
+      <div class="winner-card">
+        <img src="/2025/images/winner.jpeg" alt="Grand Winner Team - Runtime Terrors" width="150" height="150">
+        <div class="info">
+          <div class="label">Grand Winner</div>
+          <h2>Runtime Terrors</h2>
+          <div class="members">Team Members: <span>Sujata Ghimire, Mukesh Aryal</span></div>
+          <div class="actions">
+            <button class="action-btn" id="likeBtn" type="button">
+              Congratulate : <span id="likeCount">1</span>
+            </button>
+            <button class="action-btn" id="shareBtn" type="button">
+              Copy link
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Track Winners & Results Section -->
+    <section class="results-section">
+      <div class="results-section-header">
+        <h3>Track Winners & Teams</h3>
+      </div>
+
+      <div class="toolbar">
+        <div class="search-box">
+          <span class="search-icon">🔍</span>
+          <input id="teamSearch" type="text" placeholder="Search by team or track">
+        </div>
+        <div class="filter-dropdown">
+          <button id="trackBtn" class="filter-btn" type="button">
+            <span id="trackBtnLabel">All tracks</span>
+            <span>▾</span>
+          </button>
+          <div id="trackMenu" class="dropdown-menu"></div>
+        </div>
+      </div>
+
+      <!-- Desktop Table View -->
+      <div class="table-wrapper" id="desktopTableWrapper">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Team</th>
+              <th scope="col">Track</th>
+              <th scope="col">Members</th>
+            </tr>
+          </thead>
+          <tbody id="resultsBody"></tbody>
+        </table>
+      </div>
+
+      <!-- Mobile Responsive Cards View -->
+      <div class="mobile-cards-container" id="mobileCardsContainer"></div>
+
+      <!-- Empty State -->
+      <div class="empty" id="emptyState" style="display: none;">
+        No results match your search.
+      </div>
+    </section>
+
+    <div class="back-link-wrapper">
+      <a href="/" class="back-btn">← Back to IdeaX 2026 Homepage</a>
+    </div>
+  </div>
 </div>
 
-<div class="max-bg">
-<div class="mxwidth results-hero">
-    <h1>IdeaX 2025 Winners</h1>
-    <p>Celebrating this year's top innovators</p>
-</div>
+<script>
+const data = [
+  {team:'No Cactus', track:'Travel & Tourism', members:'Sanjay Pahari, Bipul Lamsal, Sabin Ranabhat, Utkrist Mani Neupane'},
+  {team:'Dev Coders', track:'AgroTech', members:'Aaditya Sapkota, Shubham Kayastha, Aashish Bam, Bhashkar Paudyal'},
+  {team:'Tech Tacticos', track:'Healthcare', members:'Diwas Parajuli, Aayush Pokhrel, Aavash Lamichhane, Abhyudit Adhikari'},
+  {team:'Digikrit', track:'Cultural Identity', members:'Prararbda Singh Mahat, Ishan Guragain, Sanjay Shrestha'},
+  {team:'Code2Convert', track:'FinTech', members:'Diya Shakya, Sulav Timalsina, Aditya Malla Thakuri, Ayush DEV'},
+  {team:'Team Enigma', track:'Open', members:'Rabin Lamichhane, Atul Tiwari, Riya Jha'},
+];
 
-<div class="winner-photo-wrap">
-    <img src="../images/winner.jpg" alt="Grand Winner - Runtime Terrors">
-</div>
+const body = document.getElementById('resultsBody');
+const mobileContainer = document.getElementById('mobileCardsContainer');
+const empty = document.getElementById('emptyState');
 
-<div class="mxwidth">
-<div class="table-area">
-    <table>
-        <thead>
-            <tr>
-                <th>Rank</th>
-                <th>Team Name</th>
-                <th>Track</th>
-                <th>Members</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td class="rank-cell winner">Grand Winner</td>
-                <td class="team-name">Runtime Terrors</td>
-                <td class="project-name">Grand Winner</td>
-                <td>Sujata Ghimire, Mukesh Aryal</td>
-            </tr>
-            <tr>
-                <td class="rank-cell runner-up">Track Winner</td>
-                <td class="team-name">No Cactus</td>
-                <td class="project-name">Travel & Tourism</td>
-                <td>Sanjay Pahari, Bipul Lamsal, Sabin Ranabhat, Utkrist Mani Neupane</td>
-            </tr>
-            <tr>
-                <td class="rank-cell runner-up">Track Winner</td>
-                <td class="team-name">Dev Coders</td>
-                <td class="project-name">AgroTech</td>
-                <td>Aaditya Sapkota, Shubham Kayastha, Aashish Bam, Bhashkar Paudyal</td>
-            </tr>
-            <tr>
-                <td class="rank-cell runner-up">Track Winner</td>
-                <td class="team-name">Tech Tacticos</td>
-                <td class="project-name">Healthcare</td>
-                <td>Diwas Parajuli, Aayush Pokhrel, Aavash Lamichhane, Abhyudit Adhikari</td>
-            </tr>
-            <tr>
-                <td class="rank-cell runner-up">Track Winner</td>
-                <td class="team-name">Digikrit</td>
-                <td class="project-name">Cultural Identity</td>
-                <td>Prararbda Singh Mahat, Ishan Guragain, Sanjay Shrestha</td>
-            </tr>
-            <tr>
-                <td class="rank-cell runner-up">Track Winner</td>
-                <td class="team-name">Code2Convert</td>
-                <td class="project-name">FinTech</td>
-                <td>Diya Shakya, Sulav Timalsina, Aditya Malla Thakuri, Ayush DEV</td>
-            </tr>
-            <tr>
-                <td class="rank-cell runner-up">Track Winner</td>
-                <td class="team-name">Team Enigma</td>
-                <td class="project-name">Open</td>
-                <td>Rabin Lamichhane, Atul Tiwari, Riya Jha</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-</div>
-</div>
-</div>
+function render(list){
+  body.innerHTML = '';
+  mobileContainer.innerHTML = '';
+
+  list.forEach((d, i) => {
+    // Render Desktop Table Row
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td class="num">${i + 1}</td>
+      <td class="team">${d.team}</td>
+      <td class="track"><span>${d.track}</span></td>
+      <td class="members">${d.members}</td>
+    `;
+    body.appendChild(tr);
+
+    // Render Mobile Card
+    const card = document.createElement('div');
+    card.className = 'mobile-result-card';
+    card.innerHTML = `
+      <div class="mobile-card-top">
+        <div class="mobile-card-team">${d.team}</div>
+        <div class="mobile-card-rank">#${i + 1}</div>
+      </div>
+      <div class="mobile-card-track">${d.track}</div>
+      <div class="mobile-card-members"><strong>Members:</strong> ${d.members}</div>
+    `;
+    mobileContainer.appendChild(card);
+  });
+
+  const hasResults = list.length > 0;
+  document.getElementById('desktopTableWrapper').style.display = hasResults ? '' : 'none';
+  mobileContainer.style.display = (hasResults && window.innerWidth <= 768) ? 'flex' : (hasResults ? 'none' : 'none');
+  empty.style.display = hasResults ? 'none' : 'block';
+}
+
+render(data);
+
+window.addEventListener('resize', () => {
+  const hasResults = body.children.length > 0;
+  if (hasResults) {
+    if (window.innerWidth <= 768) {
+      mobileContainer.style.display = 'flex';
+    } else {
+      mobileContainer.style.display = 'none';
+    }
+  }
+});
+
+const select = { value: '' };
+const trackBtn = document.getElementById('trackBtn');
+const trackBtnLabel = document.getElementById('trackBtnLabel');
+const trackMenu = document.getElementById('trackMenu');
+
+function menuItem(label, val){
+  const d = document.createElement('div');
+  d.className = 'dropdown-item';
+  d.textContent = label;
+  d.onclick = () => {
+    select.value = val;
+    trackBtnLabel.textContent = label;
+    trackMenu.style.display = 'none';
+    applyFilters();
+  };
+  return d;
+}
+
+trackMenu.appendChild(menuItem('All tracks', ''));
+[...new Set(data.map(d => d.track))].forEach(t => trackMenu.appendChild(menuItem(t, t)));
+
+trackBtn.addEventListener('click', (e) => {
+  e.stopPropagation();
+  trackMenu.style.display = trackMenu.style.display === 'block' ? 'none' : 'block';
+});
+
+document.addEventListener('click', e => {
+  if (!e.target.closest('#trackBtn') && !e.target.closest('#trackMenu')) {
+    trackMenu.style.display = 'none';
+  }
+});
+
+function applyFilters(){
+  const q = document.getElementById('teamSearch').value.toLowerCase().trim();
+  const t = select.value;
+  render(data.filter(d =>
+    (!t || d.track === t) &&
+    (d.team.toLowerCase().includes(q) || d.track.toLowerCase().includes(q) || d.members.toLowerCase().includes(q))
+  ));
+}
+
+document.getElementById('teamSearch').addEventListener('input', applyFilters);
+
+let liked = localStorage.getItem('ideax_liked') === '1';
+let likes = parseInt(localStorage.getItem('ideax_likes') || '4');
+const likeBtn = document.getElementById('likeBtn');
+
+function renderLike(){
+  likeBtn.classList.toggle('on', liked);
+  likeBtn.innerHTML = (liked ? 'Congratulated : ' : 'Congratulate : ') + `<span id="likeCount">${likes}</span>`;
+}
+
+renderLike();
+
+likeBtn.addEventListener('click', ()=>{
+  liked = !liked;
+  likes += liked ? 1 : -1;
+  localStorage.setItem('ideax_liked', liked ? '1' : '0');
+  localStorage.setItem('ideax_likes', likes);
+  renderLike();
+});
+
+document.getElementById('shareBtn').addEventListener('click', function(){
+  navigator.clipboard.writeText(window.location.href);
+  const old = this.textContent;
+  this.textContent = 'Copied!';
+  setTimeout(()=> this.textContent = old, 1400);
+});
+</script>
 </body>
 </html>

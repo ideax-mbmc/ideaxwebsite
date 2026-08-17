@@ -5,6 +5,7 @@ import Sidebar from '../components/Sidebar';
 import Footer from '../components/Footer';
 import FAQ from '../components/FAQ';
 import { FaCalendarAlt, FaClock, FaMapMarkerAlt, FaUsers, FaTrophy, FaPaperPlane } from 'react-icons/fa';
+import SEO from '../components/SEO';
 
 const PageContainer = styled.main`
   background: #041322;
@@ -220,6 +221,29 @@ const EventPage = () => {
 
   return (
     <>
+      <SEO
+        title="Event Details & Schedule | IdeaX 2026 - MBMC Hackathon"
+        description="Explore MBMC IdeaX 2026 event overview, 48-hour schedule, problem tracks, eligibility, team guidelines, and venue location at Madan Bhandari Memorial College, Kathmandu."
+        canonical="https://ideax.mbmc.edu.np/event"
+        schemaJson={{
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://ideax.mbmc.edu.np/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Event Details",
+              "item": "https://ideax.mbmc.edu.np/event"
+            }
+          ]
+        }}
+      />
       <Sidebar isOpen={isOpen} toggle={toggle} />
       <Navbar toggle={toggle} />
       <PageContainer>

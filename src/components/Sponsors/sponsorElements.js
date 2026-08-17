@@ -7,7 +7,7 @@ export const Section = styled.section`
   color: white;
 `;
 
-export const MainTitle = styled.h1`
+export const MainTitle = styled.h2`
   font-size: 3rem;
   margin-bottom: 50px;
 `;

@@ -72,11 +72,15 @@ const Logo = styled.img`
   margin-left: 0.25rem;
 `;
 
-const TitleText = styled.div`
+const TitleText = styled.h1`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  text-align:left;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+  font-weight: inherit;
 `;
 
 const Line1 = styled.span`
@@ -157,7 +161,7 @@ const JoinCard = () => {
   return (
     <JoinCardContainer>
       <TitleRow>
-        <Logo src={logo} alt="Logo" />
+        <Logo src={logo} alt="MBMC IdeaX 2026 Icon" />
         <TitleText>
           <Line1>MBMC</Line1>
           <Line>IdeaX 2026</Line>

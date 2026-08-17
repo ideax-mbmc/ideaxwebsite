@@ -133,7 +133,7 @@ export const CircleImage = styled.img`
   border: 2px solid #1d609c;
 `;
 
-export const TestimonialH1 = styled.h1`
+export const TestimonialH1 = styled.h2`
 	font-size:3rem;
     color:white;
     margin-bottom:40	px;

@@ -14,6 +14,7 @@ import Sponsors from '../components/Sponsors';
 import { useLocation } from 'react-router-dom';
 import { scroller } from 'react-scroll';
 import WelcomeBanner from '../components/WelcomeBanner';
+import SEO from '../components/SEO';
 
 const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,6 +37,11 @@ const Home = () => {
 
   return (
     <>
+      <SEO
+        title="IdeaX 2026 | MBMC Technology & Innovation Hackathon in Nepal"
+        description="MBMC IdeaX 2026 is a 48-hour national technology and innovation hackathon organized by Madan Bhandari Memorial College in Kathmandu, Nepal. Register now to build, innovate, and compete."
+        canonical="https://ideax.mbmc.edu.np/"
+      />
       <WelcomeBanner />
       <Sidebar isOpen={isOpen} toggle={toggle}/>
       <Navbar toggle={toggle} />

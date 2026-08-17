@@ -71,7 +71,7 @@ export const AboutIcon = styled.img`
     display:inline-block;
 `;
 
-export const AboutH1 = styled.h1`
+export const AboutH1 = styled.h2`
     font-size:3rem;
     color:white;
     margin-bottom:64px;
