@@ -13,6 +13,7 @@ import WhatToExpect from '../components/Expect';
 import Sponsors from '../components/Sponsors';
 import { useLocation } from 'react-router-dom';
 import { scroller } from 'react-scroll';
+import WelcomeBanner from '../components/WelcomeBanner';
 
 const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -35,6 +36,7 @@ const Home = () => {
 
   return (
     <>
+      <WelcomeBanner />
       <Sidebar isOpen={isOpen} toggle={toggle}/>
       <Navbar toggle={toggle} />
       
