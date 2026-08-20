@@ -1,8 +1,0 @@
-# https://www.robotstxt.org/robotstxt.html
-User-agent: *
-Allow: /
-
-User-agent: OAI-SearchBot
-Allow: /
-
-Sitemap: https://ideax.mbmc.edu.np/sitemap.xml
