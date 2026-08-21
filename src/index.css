@@ -214,6 +214,22 @@ body.reduced-motion .app {
   .titlebar-info { display: none; }
 }
 
+/* Expand the window-dot hit areas to a thumb-friendly 24px without changing
+   how they look (WCAG 2.2 AA target size). */
+.dot {
+  position: relative;
+}
+
+.dot::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 24px;
+  height: 24px;
+  transform: translate(-50%, -50%);
+}
+
 /* ---------------- output pane ---------------- */
 .output {
   flex: 1 1 auto;
@@ -478,6 +494,11 @@ body.reduced-motion .app {
   padding: 8px 14px;
   border-top: 1px solid var(--line);
   background: rgba(10, 18, 38, 0.6);
+  scroll-snap-type: x proximity;
+  /* Fade the trailing edge so it reads as scrollable — most of these chips sit
+     off-screen on a phone and nothing else signposts that. */
+  -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent 100%);
+  mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent 100%);
 }
 
 .chips::-webkit-scrollbar { height: 5px; }
@@ -489,9 +510,10 @@ body.reduced-motion .app {
   color: var(--accent4);
   background: var(--panel2);
   border: 1px solid var(--line);
-  padding: 6px 10px;
+  padding: 9px 12px;
   cursor: pointer;
   white-space: nowrap;
+  scroll-snap-align: start;
   transition: border-color 0.1s linear, color 0.1s linear;
 }
 
@@ -714,6 +736,30 @@ body.reduced-motion .app {
   font-size: 13px;
   width: 100%;
   max-width: 540px;
+}
+
+.intro-skip {
+  margin-top: 22px;
+  padding: 8px 14px;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--faint);
+  background: transparent;
+  border: 1px solid var(--line);
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease;
+  animation: skipFadeIn 0.4s ease 0.6s both;
+}
+
+.intro-skip:hover,
+.intro-skip:focus-visible {
+  color: var(--accent4);
+  border-color: var(--accent4);
+}
+
+@keyframes skipFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .intro-prompt {

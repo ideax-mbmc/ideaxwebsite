@@ -12,17 +12,17 @@ const BANNER_LINES = [
 
 const BOOT_LOG = [
   { t: 0, text: '[    0.000] Booting MBMC IdeaX 2026 kernel...' },
-  { t: 300, text: '[    0.312] mounting /proc and /sys filesystems' },
-  { t: 620, text: '[    0.624] loading hackathon modules... OK' },
-  { t: 940, text: '[    0.936] starting register.service... OK' },
-  { t: 1260, text: '[    1.260] mounting /tracks... OK' },
-  { t: 1580, text: '[    1.581] mounting /prizes... OK' },
-  { t: 1900, text: '[    1.901] loading ui renderer... OK' },
-  { t: 2200, text: '[    2.200] ████████████████ 100%' },
-  { t: 2500, text: '> System ready. Welcome.' },
+  { t: 160, text: '[    0.312] mounting /proc and /sys filesystems' },
+  { t: 330, text: '[    0.624] loading hackathon modules... OK' },
+  { t: 500, text: '[    0.936] starting register.service... OK' },
+  { t: 670, text: '[    1.260] mounting /tracks... OK' },
+  { t: 840, text: '[    1.581] mounting /prizes... OK' },
+  { t: 1010, text: '[    1.901] loading ui renderer... OK' },
+  { t: 1170, text: '[    2.200] ████████████████ 100%' },
+  { t: 1330, text: '> System ready. Welcome.' },
 ]
 
-const TOTAL_MS = 3400
+const TOTAL_MS = 1800
 
 export default function LoadingIntro({ onComplete }) {
   // phases: 'running' | 'flicker1' | 'dark1' | 'flicker2' | 'dark2' | 'flicker3' | 'done'
@@ -31,6 +31,33 @@ export default function LoadingIntro({ onComplete }) {
   const [progress, setProgress] = useState(0)
   const [bannerLine, setBannerLine] = useState(0)
   const timerRef = useRef([])
+  const doneRef = useRef(false)
+
+  // Tear everything down and hand off to the terminal. Guarded so that a skip
+  // racing the natural end of the sequence can't complete twice.
+  const finish = useRef(() => {})
+  finish.current = () => {
+    if (doneRef.current) return
+    doneRef.current = true
+    timerRef.current.forEach(clearTimeout)
+    timerRef.current.forEach(clearInterval)
+    timerRef.current = []
+    try { sessionStorage.setItem('ideax_intro_seen', '1') } catch { /* private mode */ }
+    setPhase('done')
+    document.body.classList.add('boot')
+    onComplete()
+  }
+
+  // Any tap, click or keypress skips the intro.
+  useEffect(() => {
+    const skip = () => finish.current()
+    window.addEventListener('pointerdown', skip)
+    window.addEventListener('keydown', skip)
+    return () => {
+      window.removeEventListener('pointerdown', skip)
+      window.removeEventListener('keydown', skip)
+    }
+  }, [])
 
   useEffect(() => {
     // Reveal banner lines one by one
@@ -74,18 +101,19 @@ export default function LoadingIntro({ onComplete }) {
 
     seq.forEach(([offset, p]) => {
       const id = setTimeout(() => {
-        setPhase(p)
         if (p === 'done') {
-          // Add boot class so terminal CRT animation fires on mount
-          document.body.classList.add('boot')
-          onComplete()
+          finish.current()
+        } else {
+          setPhase(p)
         }
       }, TOTAL_MS + 100 + offset)
       timerRef.current.push(id)
     })
 
+    // finish() is read through a ref, so this effect never needs to re-run —
+    // an unstable onComplete prop would otherwise restart the whole sequence.
     return () => timerRef.current.forEach(id => clearTimeout(id))
-  }, [onComplete])
+  }, [])
 
   // Build text-based progress bar: [████████░░░░] 42%
   const BAR_WIDTH = 28
@@ -138,6 +166,10 @@ export default function LoadingIntro({ onComplete }) {
         <span className="intro-progress-bar">{progressBar}</span>
         <span className="cursor-blink">_</span>
       </div>
+
+      <button type="button" className="intro-skip" onClick={() => finish.current()}>
+        press any key to skip &rarr;
+      </button>
     </div>
   )
 }

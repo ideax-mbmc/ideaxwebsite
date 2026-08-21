@@ -1,6 +1,27 @@
 import React, { useState, useEffect } from 'react'
 import AsciiCanvas from './AsciiCanvas'
 import { testimonials } from '../utils/testimonialsData'
+import { DEADLINE_DATE, TRACKS } from '../utils/terminalData'
+
+// Track names get restated in prose in several places; derive them from TRACKS
+// so a rename in terminalData.js can't leave these copies behind.
+const TRACK_NAMES = TRACKS.map(t => t.name)
+const trackNamesSemis = TRACK_NAMES.slice(0, -1).join('; ') + '; and ' + TRACK_NAMES.at(-1)
+const trackNamesNumbered = TRACKS.map((t, i) =>
+  `${i === TRACKS.length - 1 ? 'and ' : ''}${i + 1}) ${t.name}`
+).join(', ')
+
+// Split a millisecond delta into d/h/m/s parts.
+function splitDelta(ms) {
+  return {
+    d: Math.floor(ms / (1000 * 60 * 60 * 24)),
+    h: Math.floor((ms / (1000 * 60 * 60)) % 24),
+    m: Math.floor((ms / (1000 * 60)) % 60),
+    s: Math.floor((ms / 1000) % 60)
+  }
+}
+
+const pad = n => String(n).padStart(2, '0')
 
 export default function OutputPane({ items, onRunCommand, outputRef, onFocusInput }) {
 
@@ -10,26 +31,18 @@ export default function OutputPane({ items, onRunCommand, outputRef, onFocusInpu
     }
   }, [items, outputRef])
 
-  const [countdown, setCountdown] = useState('')
+  // Ticks once a second against DEADLINE_DATE (which carries the +05:45 offset,
+  // so this reads the same no matter where the visitor is).
+  const [now, setNow] = useState(() => Date.now())
   useEffect(() => {
-    function updateCountdown() {
-      const target = new Date('2026-09-01T00:00:00')
-      const now = new Date()
-      const diff = target - now
-      if (diff <= 0) {
-        setCountdown('00:00:00')
-        return
-      }
-      const d = Math.floor(diff / (1000 * 60 * 60 * 24))
-      const h = Math.floor((diff / (1000 * 60 * 60)) % 24)
-      const m = Math.floor((diff / (1000 * 60)) % 60)
-      const s = Math.floor((diff / 1000) % 60)
-      setCountdown(`${d}d ${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`)
-    }
-    updateCountdown()
-    const id = setInterval(updateCountdown, 1000)
+    const id = setInterval(() => setNow(Date.now()), 1000)
     return () => clearInterval(id)
   }, [])
+
+  const deadlineDiff = DEADLINE_DATE - now
+  const countdown = deadlineDiff <= 0
+    ? 'closed'
+    : (({ d, h, m, s }) => `${d}d ${pad(h)}:${pad(m)}:${pad(s)}`)(splitDelta(deadlineDiff))
 
   const handlePaneClick = (e) => {
     const sel = window.getSelection()
@@ -97,7 +110,7 @@ export default function OutputPane({ items, onRunCommand, outputRef, onFocusInpu
             <div className="card">
               <h3>about.md</h3>
               <p>
-                <span className="strong">MBMC IdeaX 2026</span> is a national technology hackathon organized by Madan Bhandari Memorial College in Kathmandu, Nepal. Registration opened on <span className="strong">28th Shrawan 2083 (13th Aug)</span> and closes on <span className="strong">16th Bhadra (1st Sept)</span>. The <span className="strong">Online Round</span> runs from <span className="strong">21st–28th Bhadra (6th–13th Sept)</span>, followed by the <span className="strong">Final On-Site Hackathon Event</span> from <span className="strong">16th–18th Ashoj (2nd–4th Oct)</span>. Participants will develop innovative technology solutions across five problem tracks: Climate Change, Resilience &amp; Sustainability; Cyber Security &amp; Digital Trust; E-Governance &amp; Smart Public Services; Smart Urban Transport &amp; Road Safety; and FinTech &amp; Digital Financial Innovation.
+                <span className="strong">MBMC IdeaX 2026</span> is a national technology hackathon organized by Madan Bhandari Memorial College in Kathmandu, Nepal. Registration opened on <span className="strong">28th Shrawan 2083 (13th Aug)</span> and closes on <span className="strong">16th Bhadra (1st Sept)</span>. The <span className="strong">Online Round</span> runs from <span className="strong">21st–28th Bhadra (6th–13th Sept)</span>, followed by the <span className="strong">Final On-Site Hackathon Event</span> from <span className="strong">16th–18th Ashoj (2nd–4th Oct)</span>. Participants will develop innovative technology solutions across five problem tracks: {trackNamesSemis}.
               </p>
             </div>
           </div>
@@ -158,6 +171,7 @@ export default function OutputPane({ items, onRunCommand, outputRef, onFocusInpu
           <div key={idx} className="line block">
             <div className="card">
               <h3>tracks/{item.track.file}</h3>
+              <p className="strong">{item.track.name}</p>
               <p>{item.track.desc}</p>
               <div className="meta">&gt; prize: Rs. 10,000</div>
             </div>
@@ -237,7 +251,7 @@ export default function OutputPane({ items, onRunCommand, outputRef, onFocusInpu
               <p style={{ marginBottom: '10px' }}>The hackathon runs continuously for a duration of 48 hours.</p>
 
               <p className="strong" style={{ color: 'var(--accent4)' }}>What are the problem tracks?</p>
-              <p style={{ marginBottom: '10px' }}>The five official problem tracks are: 1) Climate Change, Resilience &amp; Sustainability, 2) Cyber Security &amp; Digital Trust, 3) E-Governance &amp; Smart Public Services, 4) Smart Urban Transport &amp; Road Safety, and 5) FinTech &amp; Digital Financial Innovation.</p>
+              <p style={{ marginBottom: '10px' }}>The five official problem tracks are: {trackNamesNumbered}.</p>
 
               <p className="strong" style={{ color: 'var(--accent4)' }}>Where is the event held?</p>
               <p style={{ marginBottom: '10px' }}>The event is held at Madan Bhandari Memorial College, Kathmandu, Nepal.</p>
@@ -246,7 +260,7 @@ export default function OutputPane({ items, onRunCommand, outputRef, onFocusInpu
               <p style={{ marginBottom: '10px' }}>Each track winner receives a cash reward of Rs. 10,000, with a total prize pool of Rs. 111,111 (including Rs. 50,000 for the overall grand winner).</p>
 
               <p className="strong" style={{ color: 'var(--accent4)' }}>How do I register?</p>
-              <p style={{ marginBottom: '10px' }}>You can register directly through our official website registration link or via our official Devfolio page.</p>
+              <p style={{ marginBottom: '10px' }}>You can register directly through our official <a href="https://forms.gle/cBgYAroPeJeZpxa6A" target="_blank" rel="noopener noreferrer">registration form</a>, or type <span className="strong">register</span> for the link.</p>
 
               <p className="strong" style={{ color: 'var(--accent4)' }}>Do I need to have a team to participate?</p>
               <p style={{ marginBottom: '10px' }}>Teams are encouraged but not required. You can register individually or with a team of up to 4 members.</p>
@@ -481,6 +495,52 @@ export default function OutputPane({ items, onRunCommand, outputRef, onFocusInpu
           </div>
         )
 
+      case 'COUNTDOWN': {
+        const regLeft = item.deadlineDate - now
+        const eventLeft = item.targetDate - now
+        const fmt = (ms) => {
+          if (ms <= 0) return null
+          const { d, h, m, s } = splitDelta(ms)
+          return `${d}d ${pad(h)}h ${pad(m)}m ${pad(s)}s`
+        }
+        const regStr = fmt(regLeft)
+        const eventStr = fmt(eventLeft)
+        return (
+          <div key={idx} className="line block">
+            <div className="card">
+              <h3>countdown</h3>
+              <div className="kv-grid">
+                <div className="k">Registration</div>
+                <div className="v">
+                  {regStr
+                    ? <span className="warn">{regStr}</span>
+                    : <span className="dim">closed</span>}
+                </div>
+                <div className="k">Kickoff</div>
+                <div className="v">
+                  {eventStr
+                    ? <span className="ok">{eventStr}</span>
+                    : <span className="dim">under way</span>}
+                </div>
+              </div>
+              <div className="meta">{item.subText}</div>
+              {regStr && (
+                <div className="register-cta-actions" style={{ marginTop: '12px' }}>
+                  <a
+                    href="https://forms.gle/cBgYAroPeJeZpxa6A"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="register-now-btn"
+                  >
+                    REGISTER NOW &rarr;
+                  </a>
+                </div>
+              )}
+            </div>
+          </div>
+        )
+      }
+
       default:
         return null
     }
@@ -504,11 +564,9 @@ export default function OutputPane({ items, onRunCommand, outputRef, onFocusInpu
         
         <h2>Tracks</h2>
         <ul>
-          <li>Climate Change, Resilience & Sustainability - Build tools for disaster preparedness and sustainable resource management</li>
-          <li>Cyber Security & Digital Trust - Harden digital infrastructure and strengthen trust across systems</li>
-          <li>E-Governance & Smart Public Services - Make public services faster and more transparent through technology</li>
-          <li>Smart Urban Transport & Road Safety - Design solutions for safer, smarter urban mobility</li>
-          <li>FinTech & Digital Financial Innovation - Build next-generation digital financial tools for inclusion</li>
+          {TRACKS.map(t => (
+            <li key={t.id}>{t.name} - {t.desc}</li>
+          ))}
         </ul>
         
         <h2>Timeline</h2>

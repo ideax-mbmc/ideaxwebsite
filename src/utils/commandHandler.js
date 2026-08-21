@@ -22,7 +22,7 @@ export function executeCommand(rawCommand, { history, onRunCommand }) {
           ['about', 'what MBMC IdeaX actually is'],
           ['participation', 'eligibility & team requirements'],
           ['tracks', 'list the 5 problem tracks'],
-          ['tracks <id>', 'detail on one track (climate / cybersec / egov / transport / fintech)'],
+          ['tracks <id>', 'detail on one track (climate / tourism / egov / transport / fintech)'],
           ['faq', 'frequently asked questions'],
           ['conduct', 'code of conduct & hackathon rules'],
           ['hall of fame', 'visit the sponsor hall of fame'],
@@ -69,7 +69,9 @@ export function executeCommand(rawCommand, { history, onRunCommand }) {
 
     case 'conduct':
     case 'coc':
+    case 'code':
     case 'code-of-conduct':
+    case 'codeofconduct':
       return { type: 'CONDUCT_VIEW' }
 
     case 'faq':
@@ -151,7 +153,7 @@ export function executeCommand(rawCommand, { history, onRunCommand }) {
         case 'participation.md': return { type: 'PARTICIPATION' }
         case 'timeline.log': return { type: 'TIMELINE', items: getDynamicTimeline() }
         case 'prizes.md': return { type: 'PRIZES' }
-        case 'code-of-conduct.md': return { type: 'CONDUCT' }
+        case 'code-of-conduct.md': return { type: 'CONDUCT_VIEW' }
         case 'faq.md': return { type: 'FAQ' }
         case 'register.sh': return { type: 'REGISTER' }
         case 'contact.md': return { type: 'CONTACT' }

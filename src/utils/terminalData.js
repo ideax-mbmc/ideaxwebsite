@@ -6,10 +6,10 @@ export const TRACKS = [
     desc: 'Strengthen disaster preparedness & early warning systems, and build tools for sustainable resource management.'
   },
   {
-    id: 'cybersec',
-    file: 'cybersec.sh',
-    name: 'Cyber Security & Digital Trust',
-    desc: 'Build solutions that harden digital infrastructure and strengthen trust across public and private systems.'
+    id: 'tourism',
+    file: 'tourism.sh',
+    name: 'Tourism and Travels',
+    desc: 'Build tools that help travellers discover Nepal, and help local operators and heritage sites reach a wider market.'
   },
   {
     id: 'egov',
@@ -81,8 +81,12 @@ export function getDynamicTimeline() {
   ]
 }
 
+// Drives Tab-completion in CommandLine. Keep in sync with the switch in
+// utils/commandHandler.js — a command missing here still runs, it just won't complete.
 export const COMMANDS = [
-  'help', 'about', 'participation', 'tracks', 'timeline', 'prizes', 'conduct', 'coc', 'faq',
-  'register', 'contact', 'discord', 'countdown', 'whoami', 'sudo', 'clear', 'ls', 'cat',
-  'fastfetch', 'neofetch', 'date', 'echo', 'history', 'exit', 'logout'
+  'help', 'home', 'about', 'participation', 'eligibility', 'tracks', 'timeline', 'prizes',
+  'conduct', 'coc', 'code', 'code-of-conduct', 'faq', 'register', 'contact', 'discord', 'countdown',
+  'recap', 'testimonials', 'gallery', 'hall', 'halloffame', 'hall-of-fame', 'fame', 'museum',
+  'whoami', 'sudo', 'clear', 'ls', 'cat', 'fastfetch', 'neofetch', 'date', 'echo',
+  'history', 'exit', 'logout'
 ]

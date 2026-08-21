@@ -1,19 +1,21 @@
 import React from 'react'
 
 export default function SuggestionChips({ onRunCommand }) {
+  // Order matters: on a narrow phone only the first few chips are visible
+  // without scrolling, so the most-wanted commands come first.
   const chips = [
-    { label: '$ home', cmd: 'home' },
-    { label: '$ about', cmd: 'about' },
-    { label: '$ participation', cmd: 'participation' },
     { label: '$ tracks', cmd: 'tracks' },
-    { label: '$ faq', cmd: 'faq' },
-    { label: '$ conduct', cmd: 'conduct' },
-    { label: '$ hall of fame', cmd: 'halloffame' },
-    { label: '$ recap', cmd: 'recap' },
     { label: '$ prizes', cmd: 'prizes' },
     { label: '$ timeline', cmd: 'timeline' },
+    { label: '$ about', cmd: 'about' },
+    { label: '$ participation', cmd: 'participation' },
+    { label: '$ faq', cmd: 'faq' },
+    { label: '$ conduct', cmd: 'conduct' },
+    { label: '$ hall of fame', cmd: 'hall' },
+    { label: '$ recap', cmd: 'recap' },
     { label: '$ testimonials', cmd: 'gallery' },
     { label: '$ help', cmd: 'help' },
+    { label: '$ home', cmd: 'home' },
   ]
 
   return (

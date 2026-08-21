@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef, useCallback } from 'react'
 import TitleBar from './components/TitleBar'
 import OutputPane from './components/OutputPane'
 import SuggestionChips from './components/SuggestionChips'
@@ -9,6 +9,20 @@ import Testimonials from './components/Testimonials'
 import Conduct from './components/Conduct'
 import { executeCommand } from './utils/commandHandler'
 import { TRACKS, getDynamicTimeline } from './utils/terminalData'
+import { routeForCommand, routeForPath, canonicalFor, hrefFor, HOME_ROUTE } from './utils/routes'
+
+// Keep <title> and <link rel="canonical"> in step with the current route, so each
+// path is indexable in its own right rather than all claiming to be "/".
+function applyRouteMeta(route) {
+  document.title = route.title
+  let link = document.querySelector('link[rel="canonical"]')
+  if (!link) {
+    link = document.createElement('link')
+    link.rel = 'canonical'
+    document.head.appendChild(link)
+  }
+  link.href = canonicalFor(route)
+}
 
 const getInitialLandingItems = () => [
   { type: 'TEXT', text: '[ok] mounting /tracks', cls: 'ok' },
@@ -26,7 +40,15 @@ const getInitialLandingItems = () => [
 ]
 
 export default function App() {
-  const [showIntro, setShowIntro] = useState(true)
+  const [showIntro, setShowIntro] = useState(() => {
+    try {
+      // Already watched it this session (or just refreshed) — go straight in.
+      if (sessionStorage.getItem('ideax_intro_seen')) return false
+    } catch { /* private mode: fall through and play it */ }
+    // The teardown strobes brightness; that's a photosensitivity risk, so
+    // reduced-motion users skip the intro entirely.
+    return !window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  })
   const [view, setView] = useState('terminal')
   const [items, setItems] = useState([])
   const [history, setHistory] = useState([])
@@ -110,72 +132,64 @@ export default function App() {
     }
   }, [showIntro])
 
-  // Handle URL hash on load or change
+  // Point the address bar at a route and update its metadata. `push` is false
+  // when we're reacting to the URL (initial load, back/forward) rather than
+  // driving it, so we don't push a duplicate entry onto the history stack.
+  const goToRoute = (cmdName, push = true) => {
+    const route = routeForCommand(cmdName)
+    if (!route) return
+    applyRouteMeta(route)
+    if (!push) return
+    const target = hrefFor(route)
+    if (window.location.pathname !== target) {
+      window.history.pushState(null, '', target)
+    }
+  }
+
+  // handleRunCommand is redefined every render; the popstate listener below is
+  // registered once, so it calls through this ref to avoid a stale closure.
+  const runCommandRef = useRef(null)
+
+  // Apply whatever route the URL points at — on first load and on back/forward.
   useEffect(() => {
     if (showIntro) return
 
-    const handleHash = () => {
-      const hash = window.location.hash.replace(/^#\/?/, '').trim().toLowerCase()
-      if (!hash) return
-
-      if (['museum', 'hall', 'halloffame', 'hall-of-fame', 'fame'].includes(hash)) {
-        setView('museum')
-        document.title = 'Hall of Fame | MBMC IdeaX 2026'
-      } else if (['gallery', 'testimonials'].includes(hash)) {
-        setView('gallery')
-        document.title = 'Testimonials | MBMC IdeaX 2026'
-      } else if (['conduct', 'coc', 'code-of-conduct'].includes(hash)) {
-        setView('conduct')
-        document.title = 'Code of Conduct & Rules | MBMC IdeaX 2026'
-      } else {
-        handleRunCommand(hash)
+    const applyRoute = () => {
+      // Translate legacy #hash links (bookmarks, older shares) into real paths.
+      const legacy = window.location.hash.replace(/^#\/?/, '').trim().toLowerCase()
+      if (legacy) {
+        const hashRoute = routeForCommand(legacy)
+        if (hashRoute) {
+          window.history.replaceState(null, '', hrefFor(hashRoute))
+        }
       }
+
+      const route = routeForPath(window.location.pathname)
+      if (!route || route.cmd === 'home') {
+        // Covers navigating *back* to "/" from a full-screen view.
+        setView('terminal')
+        applyRouteMeta(HOME_ROUTE)
+        return
+      }
+      runCommandRef.current(route.cmd, { push: false })
     }
 
-    handleHash()
-    window.addEventListener('hashchange', handleHash)
-    return () => window.removeEventListener('hashchange', handleHash)
+    applyRoute()
+    window.addEventListener('popstate', applyRoute)
+    return () => window.removeEventListener('popstate', applyRoute)
   }, [showIntro])
 
-  const COMMAND_TITLES = {
-    about: 'About MBMC IdeaX 2026 | National Hackathon',
-    tracks: 'Tracks & Problem Statements | MBMC IdeaX 2026',
-    timeline: 'Timeline & Important Dates | MBMC IdeaX 2026',
-    prizes: 'Prizes & Rewards (Rs. 111,111) | MBMC IdeaX 2026',
-    faq: 'Frequently Asked Questions (FAQ) | MBMC IdeaX 2026',
-    conduct: 'Code of Conduct & Rules | MBMC IdeaX 2026',
-    coc: 'Code of Conduct & Rules | MBMC IdeaX 2026',
-    register: 'Register Now | MBMC IdeaX 2026',
-    participation: 'Eligibility & Team Rules | MBMC IdeaX 2026',
-    eligibility: 'Eligibility & Team Rules | MBMC IdeaX 2026',
-    hall: 'Hall of Fame | MBMC IdeaX 2026',
-    museum: 'Hall of Fame | MBMC IdeaX 2026',
-    testimonials: 'Participant Testimonials | MBMC IdeaX 2026',
-    gallery: 'Participant Testimonials | MBMC IdeaX 2026',
-    recap: 'Past Recaps (2023-2025) | MBMC IdeaX 2026',
-    contact: 'Contact & Support | MBMC IdeaX 2026',
-    discord: 'Community Discord | MBMC IdeaX 2026',
-    countdown: 'Countdown to Kickoff | MBMC IdeaX 2026',
-    home: 'MBMC IdeaX 2026 | National Hackathon Nepal | Register Now'
-  }
-
-  const handleRunCommand = (raw) => {
+  const handleRunCommand = (raw, opts = {}) => {
+    const { push = true } = opts
     const trimmed = (raw || '').trim()
-    
+
     // Always add command history if non-empty
     if (trimmed !== '') {
       setHistory(prev => [...prev, trimmed])
     }
 
     const cmdName = (trimmed.split(/\s+/)[0] || '').toLowerCase()
-    if (COMMAND_TITLES[cmdName]) {
-      document.title = COMMAND_TITLES[cmdName]
-      if (window.location.hash !== `#${cmdName}` && cmdName !== 'home') {
-        window.history.replaceState ? window.history.replaceState(null, '', `#${cmdName}`) : (window.location.hash = cmdName)
-      } else if (cmdName === 'home') {
-        window.history.replaceState ? window.history.replaceState(null, '', window.location.pathname) : (window.location.hash = '')
-      }
-    }
+    goToRoute(cmdName, push)
 
     const echoItem = { type: 'ECHO', command: raw }
     const result = executeCommand(raw, { history, onRunCommand: handleRunCommand })
@@ -184,20 +198,22 @@ export default function App() {
       setItems([])
     } else if (result && result.type === 'HOME') {
       setHistory([])
-      document.title = 'MBMC IdeaX 2026 | National Hackathon Nepal | Register Now'
+      goToRoute('home', push)
       startBootSequence()
     } else if (result && result.type === 'MUSEUM') {
       setItems(prev => [...prev, echoItem])
       setView('museum')
-      document.title = 'Hall of Fame | MBMC IdeaX 2026'
+      // Routed here explicitly: `cat code-of-conduct.md` and friends reach a view
+      // without the typed word itself being a route.
+      goToRoute('hall', push)
     } else if (result && result.type === 'GALLERY') {
       setItems(prev => [...prev, echoItem])
       setView('gallery')
-      document.title = 'Testimonials | MBMC IdeaX 2026'
+      goToRoute('gallery', push)
     } else if (result && result.type === 'CONDUCT_VIEW') {
       setItems(prev => [...prev, echoItem])
       setView('conduct')
-      document.title = 'Code of Conduct & Rules | MBMC IdeaX 2026'
+      goToRoute('conduct', push)
     } else if (result) {
       setItems(prev => [...prev, echoItem, result])
     } else {
@@ -207,6 +223,8 @@ export default function App() {
     setTimeout(focusInput, 20)
   }
 
+  runCommandRef.current = handleRunCommand
+
   const handleClearTerminal = () => {
     setItems([])
     focusInput()
@@ -214,12 +232,11 @@ export default function App() {
 
   const handleHome = () => {
     setHistory([])
-    document.title = 'MBMC IdeaX 2026 | National Hackathon Nepal | Register Now'
-    if (window.history.replaceState) {
-      window.history.replaceState(null, '', window.location.pathname)
-    }
+    goToRoute('home')
     startBootSequence()
   }
+
+  const handleIntroComplete = useCallback(() => setShowIntro(false), [])
 
   const handleFocusInput = () => {
     if (outputRef.current) {
@@ -234,10 +251,7 @@ export default function App() {
 
   const handleReturnToTerminal = () => {
     setView('terminal')
-    document.title = 'MBMC IdeaX 2026 | National Hackathon Nepal | Register Now'
-    if (window.history.replaceState) {
-      window.history.replaceState(null, '', window.location.pathname)
-    }
+    goToRoute('home')
   }
 
   return (
@@ -260,7 +274,7 @@ export default function App() {
           <div className="vignette" aria-hidden="true" />
 
           {showIntro ? (
-            <LoadingIntro onComplete={() => setShowIntro(false)} />
+            <LoadingIntro onComplete={handleIntroComplete} />
           ) : (
             <div className="app" id="app">
               <TitleBar
